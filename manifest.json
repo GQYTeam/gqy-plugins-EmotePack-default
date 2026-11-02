@@ -1,0 +1,44 @@
+{
+  "id": "emote-pack-default",
+  "name": "表情包插件",
+  "version": "1.0.0",
+  "description": "预置 24 张 512×512 表情与 4 个动图；支持列出清单、按名称展示（可内联 data URI）与按词语确定性打分匹配，供对话与产物展示使用",
+  "protocol": "gqy-jsonrpc-v1",
+  "command": ["node", "index.js"],
+  "cwd": ".",
+  "timeout_ms": 10000,
+  "concurrency": "concurrent",
+  "actions": [
+    {
+      "name": "list",
+      "description": "列出全部表情与动图：名称、标签、文件、字节数、尺寸；动图另含帧数与时长",
+      "schema": {"type": "object", "properties": {}}
+    },
+    {
+      "name": "show",
+      "description": "按名称展示一张表情或动图；也接受清单内的文件路径；inline=true 时同时返回 data URI",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "name": {"type": "string", "description": "表情或动图名称，如 05-困倦；也接受清单内的文件路径"},
+          "inline": {"type": "boolean", "description": "是否内联返回 data URI"}
+        },
+        "required": ["name"]
+      }
+    },
+    {
+      "name": "match",
+      "description": "按词语确定性打分匹配表情（名称完全相等、标签相等、包含关系），返回分数降序的候选",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "query": {"type": "string", "description": "查询词，如 累"},
+          "limit": {"type": "integer", "minimum": 1, "maximum": 24, "default": 3, "description": "返回条数上限，默认 3"}
+        },
+        "required": ["query"]
+      }
+    }
+  ],
+  "provides": [],
+  "requires": []
+}

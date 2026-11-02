@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "generated": "2026-11-02",
+  "emotes": [
+    {"name": "01-平静", "label": "平静", "tags": ["平静", "冷静", "日常", "默认"], "file": "emotes/01-平静.png", "width": 512, "height": 512},
+    {"name": "02-浅笑", "label": "浅笑", "tags": ["浅笑", "微笑", "开心", "高兴"], "file": "emotes/02-浅笑.png", "width": 512, "height": 512},
+    {"name": "03-侧目", "label": "侧目", "tags": ["侧目", "怀疑", "斜眼", "观察"], "file": "emotes/03-侧目.png", "width": 512, "height": 512},
+    {"name": "04-皱眉", "label": "皱眉", "tags": ["皱眉", "疑惑", "不满", "为难"], "file": "emotes/04-皱眉.png", "width": 512, "height": 512},
+    {"name": "05-困倦", "label": "困倦", "tags": ["困倦", "累", "困", "疲惫"], "file": "emotes/05-困倦.png", "width": 512, "height": 512},
+    {"name": "06-惊讶", "label": "惊讶", "tags": ["惊讶", "吃惊", "震惊", "意外"], "file": "emotes/06-惊讶.png", "width": 512, "height": 512},
+    {"name": "07-专注", "label": "专注", "tags": ["专注", "认真", "工作", "集中"], "file": "emotes/07-专注.png", "width": 512, "height": 512},
+    {"name": "08-喝茶", "label": "喝茶", "tags": ["喝茶", "悠闲", "放松", "休息"], "file": "emotes/08-喝茶.png", "width": 512, "height": 512},
+    {"name": "09-打哈欠", "label": "打哈欠", "tags": ["打哈欠", "困", "无聊", "疲惫"], "file": "emotes/09-打哈欠.png", "width": 512, "height": 512},
+    {"name": "10-得意", "label": "得意", "tags": ["得意", "骄傲", "自信", "成功"], "file": "emotes/10-得意.png", "width": 512, "height": 512},
+    {"name": "11-思考", "label": "思考", "tags": ["思考", "疑问", "考虑", "想"], "file": "emotes/11-思考.png", "width": 512, "height": 512},
+    {"name": "12-被叫到", "label": "被叫到", "tags": ["被叫到", "召唤", "点名", "警觉"], "file": "emotes/12-被叫到.png", "width": 512, "height": 512},
+    {"name": "13-生气", "label": "生气", "tags": ["生气", "愤怒", "不满", "抗议"], "file": "emotes/13-生气.png", "width": 512, "height": 512},
+    {"name": "14-落泪", "label": "落泪", "tags": ["落泪", "难过", "伤心", "哭"], "file": "emotes/14-落泪.png", "width": 512, "height": 512},
+    {"name": "15-害羞", "label": "害羞", "tags": ["害羞", "脸红", "紧张", "矜持"], "file": "emotes/15-害羞.png", "width": 512, "height": 512},
+    {"name": "16-无语", "label": "无语", "tags": ["无语", "无奈", "沉默", "尴尬"], "file": "emotes/16-无语.png", "width": 512, "height": 512},
+    {"name": "17-睡着", "label": "睡着", "tags": ["睡着", "睡", "晚安", "休息"], "file": "emotes/17-睡着.png", "width": 512, "height": 512},
+    {"name": "18-大笑", "label": "大笑", "tags": ["大笑", "笑", "开心", "哈哈"], "file": "emotes/18-大笑.png", "width": 512, "height": 512},
+    {"name": "19-抱猫", "label": "抱猫", "tags": ["抱猫", "猫", "可爱", "治愈"], "file": "emotes/19-抱猫.png", "width": 512, "height": 512},
+    {"name": "20-撑伞", "label": "撑伞", "tags": ["撑伞", "雨天", "下雨", "浪漫"], "file": "emotes/20-撑伞.png", "width": 512, "height": 512},
+    {"name": "21-举牌", "label": "举牌", "tags": ["举牌", "牌子", "提示", "举"], "file": "emotes/21-举牌.png", "width": 512, "height": 512},
+    {"name": "22-扶额", "label": "扶额", "tags": ["扶额", "无奈", "头疼", "尴尬"], "file": "emotes/22-扶额.png", "width": 512, "height": 512},
+    {"name": "23-比心", "label": "比心", "tags": ["比心", "喜欢", "爱", "谢谢"], "file": "emotes/23-比心.png", "width": 512, "height": 512},
+    {"name": "24-托腮", "label": "托腮", "tags": ["托腮", "发呆", "无聊", "等待"], "file": "emotes/24-托腮.png", "width": 512, "height": 512}
+  ],
+  "motions": [
+    {"name": "全24态", "label": "全24态", "tags": ["全24态", "轮播", "总览"], "file": "motions/表情包-全24态.gif", "width": 512, "height": 512, "frames": 24, "frame_ms": 520, "duration_ms": 12480, "note": "24 态依次轮播，每态 520ms"},
+    {"name": "全局呼吸24态", "label": "全局呼吸24态", "tags": ["全局呼吸24态", "呼吸", "循环"], "file": "motions/表情包-全局呼吸24态.gif", "width": 512, "height": 512, "frames": 72, "frame_ms": 400, "duration_ms": 28800, "note": "24 态各 3 帧呼吸循环，每帧 400ms"},
+    {"name": "动作六态", "label": "动作六态", "tags": ["动作六态", "动作", "轮播"], "file": "motions/表情包-动作六态.gif", "width": 512, "height": 512, "frames": 6, "frame_ms": 620, "duration_ms": 3720, "note": "抱猫/撑伞/举牌/扶额/比心/托腮 六态轮播，每态 620ms"},
+    {"name": "微信240-24态", "label": "微信240-24态", "tags": ["微信240-24态", "微信", "240", "六态"], "file": "motions/表情包-微信240-24态.gif", "width": 240, "height": 240, "frames": 6, "frame_ms": 450, "duration_ms": 2700, "note": "微信尺寸版（240×240），六动作态轮播，每帧 450ms"}
+  ]
+}
