@@ -1,0 +1,600 @@
+{"text":"用户：帮我把这段死循环揪出来，我盯了十分钟没头绪","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"这段递归按执行顺序拆开讲一遍，每一层我都要看到","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：给我写个小脚本，把下载的文件按日期批量改名","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这条查询跑得特别慢，帮我看看能不能走索引","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"帮我把上个月的数据核对到小数点后两位","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：接下来两小时我专心把这个模块的单测补齐","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"这次重构我拆成六个小步，帮我把先后顺序排一下","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这个页面偶尔白屏，我复现不出来，帮我列个排查顺序，从最容易验证的地方排起，每一步写下要看什么","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这段代码是同事留下的 ；助手：哪一块最绕？ ；用户：中间那段状态判断，你陪我一条条过","label":"07-专注","source":"authored-b-1","note":"多轮"}
+{"text":"用户：明天要过评审，我得把缓存方案的取舍讲明白，手里只有三页草稿，帮我把命中率、过期策略、击穿保护按讲解顺序铺开，每块再给我两个可能被追问的问题和一句兜底的说法，我要能顺下来不卡壳，最后帮我压成一页备忘","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：帮我把这个接口的错误码归个类，我一条条改","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"这块表单校验写得太散，帮我收拢成一个函数","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我先把日志按时间轴对一遍，有异常再喊你","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：压测跑到第三轮就开始抖，帮我分析可能卡在哪","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"把这段代码的边界条件全列出来，我逐个补","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我在画订单状态流转图，帮我确认有没有漏掉的分支","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"帮我把这份配置逐条核对，跟文档对齐","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这个列表滚动会卡，我录了一段性能面板，你帮我判断是重排还是重绘，再给我两条能自己复测的方法","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这段正则我想彻底看懂 ；助手：先从最内层开始 ；用户：好，你把每一组括号的作用标出来，我自己再默写一遍","label":"07-专注","source":"authored-b-1","note":"多轮"}
+{"text":"用户：我要给新同事讲一遍鉴权流程，从登录、签发、携带到刷新四段都过一遍，每段配一张时序图，讲的时候能当场指到具体请求，你帮我把这四段拆成讲解要点，标出最容易讲错的地方，顺序按实际请求走的路径排","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这道积分题我卡在换元那步，你带我推一遍","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"帮我把这份代码逐行看一遍，注释和实现不一致的标出来","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我今晚专心背单词，两小时不看手机","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：两个锁的获取顺序我想统一，帮我看看哪里会互等","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"把论文的实验设置读细一点，我要照着复现","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这份文档的术语前后不一致，帮我做一次校对","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我在补流程图，缺的那条异常路径你帮我想想","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：内存占用每小时涨一点，重启能掉回去，我想按对象类型定位，帮我排一下从观察到确认的步骤","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：并发下偶尔少一条记录 ；助手：事务范围画出来了吗？ ；用户：还没，我先把两段临界区标出来，你帮我顺一下顺序","label":"07-专注","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这周要把搜索链路的耗时拆开看，从请求进来、分词、召回、排序到返回逐段打点，我想先有一张能对着讲清楚的表，再决定先动哪一段，你按这个思路把需要采样的位置列出来，越具体越好，并按重要性标出哪三个必须优先看","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：帮我看看这个时间戳为什么差了八小时","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"排序这块换成堆排，帮我把要改的行标出来","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我先把测试数据造出来，再跑一遍全链路","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这个滑块拖起来一顿一顿的，帮我找找原因","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"帮我把接口文档的字段和返回值对一遍","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我在啃编译原理那章，语法树那段画不出来","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这段代码要跑在内存很小的板子上，帮我抠一抠占用","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我想把这套校验规则改成配置驱动，先帮我把现有规则整理成一张表，标出哪些是重复的，哪些可以合并成一条","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：输入中文会丢字 ；助手：中英混输时才出现？ ；用户：对，我录了三次复现，你帮我看看是不是输入法事件顺序的问题","label":"07-专注","source":"authored-b-1","note":"多轮"}
+{"text":"用户：我准备把定时任务从每分钟一次改成每小时一次，牵涉到几个下游的读取节奏，帮我把受影响的地方一处一处列出来，按影响从大到小排，我这周就照这个清单改，改完再回头核对一遍，另外把回滚的步骤也附在最后","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这段代码里有两个同名变量，帮我理清作用域","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"帮我把这次上线要动的文件列成清单","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我先专心把这个图表组件写完，别的晚点再说","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这段解析遇到空数组就崩，帮我补个判断","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"帮我把三个环境的差异对一下，我要统一配置","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我在推这个递推式，卡在化简那一步","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这批数据里有重复主键，帮我写个去重脚本","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我要给这个模块补一份设计说明，先说数据流，再讲失败处理，最后列一下依赖，你帮我理个提纲","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：构建脚本改了一版还是慢十分钟 ；助手：哪一步最慢？ ；用户：依赖安装，你帮我看看能怎么缓存","label":"07-专注","source":"authored-b-1","note":"多轮"}
+{"text":"用户：后台表格三千行滚动明显掉帧，我想先确认列表项能不能复用，再看虚拟滚动要改多少地方，最后评估要不要分页，帮我把这三步的验证方式和预期收益写清楚，我照着顺序做，每一步给出一个能判断成功与否的指标","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：帮我把这个函数拆成三个小函数，职责分开","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"这个函数太长，帮我按职责拆成三个","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我先把这个算法的手推过程写下来，再对答案","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：缓存穿透这块我想加个过滤器，先帮我把边界想全","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"帮我把这段采集脚本的限速逻辑改成可配置","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我在整理接口的返回结构，想让字段名统一","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这份实验记录我要按日期重排，你帮我看顺序","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我打算把这段同步调用改成异步，先帮我列出会受影响的下游，再标出哪些必须顺手改","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这套权限设计我越看越乱 ；助手：先画角色还是先画资源？ ；用户：先画资源，你把资源和动作的组合列全，我再补角色","label":"07-专注","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这个季度我要把看板的加载时间从八秒降到三秒，先拆出数据源、聚合、渲染三段分别计时，再逐段找可以提前或缓存的部分，你帮我按这个思路写一份分周计划，每周一个可验证的目标，最后用一句话说明为什么这么排","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：帮我把这个正则改成能匹配多行","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我在写单元测试，mock 那块不太会写","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这段代码的注释我重写了一遍，帮我看清不清楚","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：先把表结构画出来，我们再聊查询怎么写","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我在核对库存数量和盘点单，一行行比","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"帮我把这个排序的稳定性说清楚，我要写进注释","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这段代码的事件监听没解绑，帮我看看哪里漏了","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我想把接口的重试策略定下来，先说清楚哪些情况该重试、哪些绝对不行，你帮我列个决策表","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这个图表的数据对不上 ；助手：哪一层算错了？ ；用户：可能是聚合，你陪我从原始表往上追","label":"07-专注","source":"authored-b-1","note":"多轮"}
+{"text":"用户：我在准备一次技术分享，讲从单体到拆分的踩坑过程，手里有六个片段但顺序乱，帮我把它们排成一条有前因后果的线，每段配一句总结和一个提问点，我要在二十分钟里讲完，开场和收尾各留两分钟，中间按这条线走","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：帮我把这段循环改成向量化写法","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我在给这个类补文档注释，参数部分先写","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我先把主要流程跑通，样式晚点再调","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这个函数的返回值有三种情况，帮我分清楚","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"跟我一起把这套题的第二问推完","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我在整理这个模块的依赖关系，怕有循环引用","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这段查询想把子查询改成关联，帮我看等价性","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我打算给这个脚本加参数校验，先帮我把非法输入列全，再一条条对应提示，最后补测试","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这套缓存想加个容量上限 ；助手：先定淘汰策略？ ；用户：对，你帮我把几种策略的代价写清楚，我来选","label":"07-专注","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这两个版本的实现差在哪里，我要在一天内判断哪一版更适合继续维护，帮我把读取逻辑、扩展成本、调试难度三块分别对照，每块给出一条可验证的判断依据，最后再用一句话总结差别，如果两条都说得通，就按维护成本来定","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：帮我把这段代码里的魔法数字换成常量","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我在给这个页面做骨架屏，先把布局定下来","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这道概率题的期望值我算了两遍不一样","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我想把这套埋点格式统一，先定字段","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：帮我把这个递归改成迭代，怕栈太深","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我在给这个库写示例，想让人三分钟能跑起来","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：这段代码的异常分支太多，帮我把可以合并的挑出来","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：我把这段逻辑重写了一半 ；助手：与原行为差异在哪？ ；用户：还没比，你帮我把两边输出逐条对照","label":"07-专注","source":"authored-b-1","note":"多轮"}
+{"text":"用户：我想给这个表单加实时校验 ；助手：先定规则还是先定交互？ ；用户：先定规则，你帮我把每条规则对应的提示语列出来","label":"07-专注","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这周要把三个页面的样式统一到一套变量上，先盘点现在用的颜色和间距，归并出最小集合，再逐个页面替换，替换完做一轮对比截图，帮我把这个流程拆成可交付的四步，每一步都要能停在一个可回退的版本上","label":"07-专注","source":"authored-b-1","note":""}
+{"text":"用户：隔壁组今天开会吵起来了，我们全程喝茶看戏","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"听说楼下两家奶茶店打价格战，我看得挺乐","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：我在茶水间听了一耳朵，说部门要搬家","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"公司群里为了一点小事吵了一下午，我就看着","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：朋友圈今天全是晒年终奖的，我端着杯子慢慢翻","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"我们组和隔壁组的方案之争，我先看看热闹","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：刚泡了壶乌龙，慢慢跟你聊","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：老同学群里正在回忆当年，一群人在那儿掰扯谁先迟到，我笑着看，偶尔插一句，还挺有意思","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：听说要新来一个负责人 ；助手：消息准吗？ ；用户：还没定，先当八卦听着，反正早晚会传开，我们慢慢看","label":"08-喝茶","source":"authored-b-1","note":"多轮"}
+{"text":"用户：今天下午难得没事，我把茶具洗了，泡了壶铁观音，坐在窗边看楼下人来人往，你要是愿意，我们就从最近这些鸡毛蒜皮的传闻聊起，一件一件说，不用急着有结论，反正一下午都空着，聊累了就安静坐一会儿也不打紧","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：今天不忙，慢慢聊，先说说你那边","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"我泡了茶，正窝在沙发上听老歌","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：下午的会推了，难得松快，先歇会儿","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"阳台的花开了两朵，我端着杯子看了半天","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：周末打算就在家煮点东西，不往外跑","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"今天的太阳暖洋洋的，我搬个凳子在楼下坐着","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：我正在试第三款茶叶，慢慢对比口感","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：老小区里的事真多，早上又有人在楼下聊了半小时的家长里短，我边听边把早饭吃完，顺便摸清了整栋楼的近况","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：我最近把追剧的节奏放慢了 ；助手：一周看几集？ ；用户：两三集吧，看的时候顺便泡点东西喝，不赶进度","label":"08-喝茶","source":"authored-b-1","note":"多轮"}
+{"text":"用户：今天给自己放了个假，上午去菜市场转了转，买了两样青菜和一斤虾，中午慢慢做了一顿饭，吃完把厨房收拾干净，现在坐在客厅里，茶刚泡上，窗外有人在遛狗，我一时也没什么正事，想说点什么都行，说走题也没关系，反正一下午都是空的","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：这剧的男二真会演，我边看边吐槽","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"那档综艺的新一期我看了，慢慢跟你讲","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：纪录片里那段海边的镜头挺好看","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"老电影重看一遍，反而看出很多细节","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：我一边嗑瓜子一边追更新，挺惬意","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"这季的剧情走向我猜错一半，还挺有意思","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：今晚准备看两集，配点小零食","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：这综艺请了几位老演员，聊天环节特别有味，我看得慢，一集能看一晚上，也不急着追完","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：新剧开播了 ；助手：值得追吗？ ；用户：节奏偏慢，不过我正好当背景声，边看边跟你聊两句，也不耽误手里的事","label":"08-喝茶","source":"authored-b-1","note":"多轮"}
+{"text":"用户：最近把收藏夹里那几部老片子翻出来重看，一部一部排着，看到有意思的地方就记一句，隔天再跟你聊聊当时的想法，这样慢慢看反而比一口气刷完有意思，反正也不赶时间，看完一部再挑下一部，哪天有兴致再挑一部","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：楼下两只猫又对峙上了，蹲着看半天","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"我家狗把垫子拖到阳台去了，随它折腾","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：小区那只橘猫今天肯让我摸两下","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"邻居的鹦鹉学会了一句新话，学得还挺像","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：鱼缸里新放了两株水草，看着舒服","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"窗外有只鸟一直站在栏杆上，我就看着它","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：晚饭后带狗遛了一圈，走得很慢","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：楼下老头们摆了个棋盘，围了一圈，我站边上看了半局，谁也没赢谁，倒看得入神，连水都忘了喝","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：我家那只猫又占领了我的椅子 ；助手：你怎么处理的？ ；用户：我挪了个凳子，随它去，正好喝杯茶，看它睡到什么时候","label":"08-喝茶","source":"authored-b-1","note":"多轮"}
+{"text":"用户：今天上午把阳台收拾了一遍，挪出个小角落放椅子和矮桌，下午就在那儿坐着，看楼下的猫来来回回，偶尔翻两页闲书，中间添了两次茶，一天过得挺快，也没做什么正经事，晚上还想着明天继续这么过","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：今晚有场球，我早点把饭吃了","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"主队这半场踢得散，不过看着还是乐","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：我在看直播，弹幕比比赛有意思","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"隔壁的球迷在阳台喊起来了，我跟着看两眼","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：周末准备窝在家看两场，什么都不干","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"这场的解说挺逗，慢悠悠地说着","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：我给晚上的比赛备了瓜子和茶","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：老同学约了个线上看球的局，几个人在群里你一句我一句，比赛还没开始就聊嗨了，比正片还热闹","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：我最近开始看围棋直播 ；助手：看得懂吗？ ；用户：半懂，主播讲得慢，我就当闲聊听，顺便记住几个词","label":"08-喝茶","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这周末不安排出门，比赛排得满，从下午看到晚上，中间起来煮了碗面，间隙还在群里跟人掰扯上一场的判罚，一天就这么松松散散过去了，挺舒服，下周要是还有这样的赛程，我还这么过，这种周末多来几个也不腻","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：楼上装修的声音停了两天，清净","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"楼下的铺子换了招牌，我路过看了一眼","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：今天公司门口有人发传单，热闹","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"电梯里听到两人在聊跳槽，我就听着","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：小区门口新开的水果摊，价格实在","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"听说这条街要种一排树，慢慢等着看","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：我们楼新搬来一户，搬了两天","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：中午食堂排队时听见前面几位在聊年会的节目，说得有来有回，我端着盘子听完了，饭都凉了","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：公司要调工位了 ；助手：你被调吗？ ；用户：还没通知，先听风声，反正搬家也是别人的事，我跟着看热闹","label":"08-喝茶","source":"authored-b-1","note":"多轮"}
+{"text":"用户：今天这栋楼里故事不少，早上有人在电梯口争论车位，中午又有人给前台送花，下午茶时间几个人围在休息区议论，我就在一边听着，偶尔应一句，日子过得慢，倒也有意思，比坐在工位上盯着屏幕强","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：朋友说他相亲了三次，我听着挺有意思","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"表姐家孩子上幼儿园了，家里都在说","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：两个老同事复合了，群里又开始热闹","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"我同学结婚请了一桌，聊到半夜","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：家里亲戚又在群里张罗聚会","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"邻居家的闺女考上大学了，全院都在夸","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：老友最近在相亲，进度我全知道","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：周末有个小聚会，几个人在一块儿聊各自近况，说着说着就翻出旧照片，一张张看过去，说着从前的事","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：我堂弟最近谈恋爱了 ；助手：进展如何？ ；用户：刚开始，家里都知道，天天有人打听，我也跟着听一耳朵","label":"08-喝茶","source":"authored-b-1","note":"多轮"}
+{"text":"用户：今天陪家里人聊了一下午的亲戚近况，谁家孩子换工作了，谁家老人过生日，一件一件说，中间续了两次茶，天黑才散，说的都是别人的事，听着也不累，回头想想还挺有趣，说不定下回就轮到说我们家了","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：新开了家面馆，我去试了一碗","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"街角那家早餐摊的豆浆真不错","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：今天买了点橘子，酸甜刚好","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"我学着做了道炖菜，火候慢慢调","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：楼下那家烤串摊晚上最热闹","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"周末想找家安静的店坐一下午","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：菜市场今天的虾很新鲜","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：晚上煮了一锅粥，配两碟小菜，坐在厨房慢慢吃完，又添了半碗，一边吃一边跟你说说这顿","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：我在琢磨周末做点什么菜 ；助手：想弄复杂的？ ；用户：不复杂，就两个家常的，慢慢做，边做边跟你说说","label":"08-喝茶","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这个周末打算去城南那条老街走走，那里有家卖糖水的铺子开了二十多年，老板见谁都聊两句，我打算坐一下午，喝一碗，看看门口的人流，回来再跟你说说这一趟，走累了就在巷口找个地方歇着，回来路上再买点水果","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：下个月想去个近的地方走走，先随便看看","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"我在翻以前旅行的照片，慢慢看","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：朋友喊我秋天去看红叶，先应着","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"打算去周边古镇住一晚，慢慢逛","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：我在地图上看那些小县城，看得起劲","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"火车上看到窗外的田，时间过得慢","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：这次出门不想赶行程，走到哪算哪","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：我在看朋友开荒 ；助手：进度怎么样？ ；用户：卡在第二个 boss，我就一边喝茶一边看他们试","label":"08-喝茶","source":"authored-b-1","note":"多轮"}
+{"text":"用户：假期还没定去哪 ；助手：有想去的方向吗？ ；用户：想往南边走，反正不赶时间，先看几个地方再说","label":"08-喝茶","source":"authored-b-1","note":"多轮"}
+{"text":"用户：我在整理上次出门拍的照片，按地方分了几个文件夹，一边删模糊的一边想起当时的情形，哪条巷子吃了什么，谁跟我一起走的，都还记得清楚，整理完想跟你说说这一趟，顺便看看还有没有漏掉的地方","label":"08-喝茶","source":"authored-b-1","note":""}
+{"text":"用户：会开到第三十分钟还在讲第一页","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"同一个流程讲了三遍，我已经能背了","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：这场培训的幻灯片和上季度一模一样","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"大家轮流念稿，我坐着听着","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：今天这个会没有议题，纯闲聊","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"每周的例会都在重复上周的话","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：我在会议室后排，同一个例子听了三遍","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：季度总结会开了快两小时，领导一段话翻来覆去讲，我的笔在纸上画了半页圈，也不知道在记什么","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：这个会还没结束吗 ；助手：还在第二轮讨论 ；用户：同一个问题问了三遍了，再讲下去我要睡着了","label":"09-打哈欠","source":"authored-b-1","note":"多轮"}
+{"text":"用户：下午连着两场会，第一场把上个月的进展逐条念完，第二场又把同样的进展从头讲一遍，中间只休息了五分钟，我坐在那儿看着时间一点点过去，桌上那张议程表翻了两次，实在提不起精神来，脑子也钝了","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：排队排了四十分钟，前面还一堆","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"我在取号，前面还有二十七位","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：这条队伍走得比蜗牛还慢","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"等了两小时，窗口只叫了三个号","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：体检排队的人从走廊排到门口","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"我在大厅坐着等号，屏幕一动不动","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：办事窗口午休，我们都在外面站着","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：今天去办证明，取号之后等了快一个钟头，中间只叫了五个号，我坐在椅子上把手机里的新闻翻了三遍","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：队伍一直不动 ；助手：还要排多久？ ；用户：不知道，前面的人也在探头看，反正没动静，只能等着","label":"09-打哈欠","source":"authored-b-1","note":"多轮"}
+{"text":"用户：早上八点就来排队，前面已经绕了半圈，站到十点还没进大厅，脚都站麻了，中间有人插队又吵了几句，等的这几个小时里我基本没别的事可干，只能盯着前面的人一步一步往前挪，中途连厕所都懒得去","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：在家待了一天，没事可做","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"我把天花板数了两遍，还是那些格子","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：手机刷到没有新内容了","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"一个下午过去了，我什么也没干成","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：电视开着，我没在看，就图个响","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"周末两天全在家，越待越没劲","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：我在沙发上换了八个姿势","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：本来想找点事做，翻了一圈发现没什么意思，最后还是躺回沙发上，把遥控器来回按了两遍","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：你今天忙吗 ；助手：还好，怎么了？ ；用户：没事，我就是闲得慌，找人说说话，也没什么正事","label":"09-打哈欠","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这一整天什么都没安排，上午把衣柜整理了一遍，下午把整理好的又看了一遍，明明没什么变化，却花了很长时间，剩下的半天不知道还能干什么，天还没黑就已经在等睡觉，翻了两页书也没看进去，也就那样","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：这节课讲了两小时同一个定义","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"教材这段反复绕，一句话说三遍","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：我在看一份很长的说明书，看到第三遍","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"报了门网课，前五节都在讲基础","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：这份报告的每一节都在重复上一节","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"老师从头到尾念课件，不举例子","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：我把这份手册翻到一半就翻不动了","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：讲师把同一张图表放了四次，每次都说再强调一下，我手里的笔记已经记不下去，笔停在半空","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：这章我看了两遍 ；助手：没看懂？ ；用户：不是，看懂了，就是内容翻来覆去，看得人提不起劲","label":"09-打哈欠","source":"authored-b-1","note":"多轮"}
+{"text":"用户：今天听了一场三个小时的线上讲座，前一个小时讲背景，中间一个小时把前面讲过的背景再梳理一次，最后一小时才提到正题，而且只讲了十分钟就结束了，我全程坐在电脑前，中间给自己倒了两次水","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：等公交等了二十分钟，站台没遮的","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"车次一直显示延误，屏幕没变","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：地铁这趟挤不上，等下一班","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：约好的车迟迟不来，我在楼下站着","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：我在候车厅等了半小时，广播还没叫号","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"我在等电梯，显示屏停在十二层","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：食堂的队伍从门口拐了个弯","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：景点门口排队进入，队伍沿着围墙绕到后面，前面的人一动不动，我在原地站了很久，脚也站酸了","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：车还没来 ；助手：等了多久？ ；用户：快半小时了，站台人都快走光了，风还挺大，站也不是坐也不是","label":"09-打哈欠","source":"authored-b-1","note":"多轮"}
+{"text":"用户：下午去车站接人，车晚点，我就在候车厅坐着，先看了一遍大屏，又把手机里的消息都回完了，实在没事就看着门口的人进进出出，一坐就是两个多小时，椅子硬，人也有点撑不住，只能翻来覆去等广播","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：同一张表我填了第五遍","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"这几个步骤一遍遍重复，我机械地按","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：会议纪要写到第三版，内容一模一样","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"系统让每页都重新点一次同意","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：这批数据要一条条手动录入","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"我贴一遍，再确认一遍，再贴一遍","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：这份名单核到第四遍还没完","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：这个流程每处理一条都要重新回到首页，点三个按钮，再滑到底，一百多条做下来手都木了","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：这些重复操作能简化吗 ；助手：大概多少条？ ；用户：一百多，每一步都一样，做着做着就没劲了","label":"09-打哈欠","source":"authored-b-1","note":"多轮"}
+{"text":"用户：今天在整理台账，一条一条往上贴，每一条的字段都一样，只是数字不同，做到一半停下来喝了口水，又接着贴，从上午到下午，中间看了两次进度，还剩一大半，眼睛都有点花，中间接了个电话又回来","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：陪会陪了一上午，我一句话没说","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"这场会跟我没关系，我被拉上了","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：两个部门在争论，我在一边坐着","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"会议里念了十几页通报，没有重点","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：我被安排旁听，全程没有说话的机会","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"会开到中午，内容还是那些","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：这个线上会我挂着，人早走神了","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：上午被拉去开了个跨部门的会，前一半在介绍背景，后一半在重复前一半，我在角落里全程没什么要说的","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：这个会你也在听吗 ；助手：在，没什么内容 ；用户：对，就这样一直念，估计还要一个小时","label":"09-打哈欠","source":"authored-b-1","note":"多轮"}
+{"text":"用户：今天被拉去旁听一整天的评审，从早上开始，一个模块一个模块地过，每个模块的讲解方式都一样，先总述再分点再总结，听多了就分不清讲的是哪一个，中间唯一的变化是有人出去接电话，笔记也懒得写","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：游戏匹配了五分钟还没进去","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"打开一个页面转圈转了半分钟","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：等更新包下载，进度条慢慢爬","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"我在等系统算完，光标闪啊闪","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：这条加载条好像卡住了，一直没动","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"排队进服排了三千多人","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：等队列里的任务跑完，还有二十多个","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：这个页面一直转圈，我等了两轮刷新，还是同样的样子，索性就盯着看，什么也干不了","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：还没好吗 ；助手：还在跑 ；用户：都等了十几分钟了，进度条才走一小格，也没个预计时间","label":"09-打哈欠","source":"authored-b-1","note":"多轮"}
+{"text":"用户：晚上的排位要等很久，我开着一局匹配就去做别的事，回来发现还在排队，队列人数反而多了一些，屏幕上显示的预计时间一直往上跳，从三分钟变成八分钟，又变成十五分钟，队伍里的人都在叹气，也懒得退","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：群里同一条通知发了四遍","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"每个人都在转发同一篇文章","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：家族群里刷屏的都是同一条消息","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"群里没人说话，只有广告在跳","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：我被拉进一个群，一整天都在刷同样的图","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"每天都是这几句问候，来回发","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：群里的接龙排到两百多号","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：还有一小时吗 ；助手：日程上还有四十分钟 ；用户：我感觉已经坐了一整天了，腿都麻了","label":"09-打哈欠","source":"authored-b-1","note":"多轮"}
+{"text":"用户：群里又在刷屏 ；助手：说什么？ ；用户：就说一件事，反复说，看得眼睛都花了，也插不上话","label":"09-打哈欠","source":"authored-b-1","note":"多轮"}
+{"text":"用户：今天好几个群都在转同一条消息，开头一段图，后面一堆感叹号，隔几分钟就弹一次，我从早上看到下午，内容一个字都没变，实在不想再点开，最后把群全部设成了免打扰，后面那几条我直接略过，眼不见心不烦","label":"09-打哈欠","source":"authored-b-1","note":""}
+{"text":"用户：证书拿到了，一次过","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"我这次考了九十二，全班第三","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：科目二过了，就练了两周","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"分数线出来了，我比线高了二十","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：这次考完就等着拿证了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"我报的那门考试一次就过了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：成绩出来，我居然进了前十","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：昨天查分数的时候手都在抖，点开一看过了，而且比我估的高了十几分，现在还有点不敢相信，打算晚上跟家里说","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：出成绩了 ；助手：怎么样？ ；用户：过了，还是高分，我这几个月的题没白刷，回头请你喝一杯","label":"10-得意","source":"authored-b-1","note":"多轮"}
+{"text":"用户：今天把成绩单打印出来贴在冰箱上，家里人都过来看，我妈还拍照发了亲戚群，我坐在旁边假装不在意，其实心里挺美，这半年每天早起做题的日子总算有了回报，连楼下邻居都知道我考过了，这是实话","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：项目上线了，全程没出事","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"我这个模块提前两天交出去了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：功能做完了，评审一次过","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"我提的改动被采纳了，直接合了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：今天把最后一个问题清掉了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"这个需求我一天就搞定了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：文档也交了，评审那边没意见","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：熬了几个晚上把整套功能补完，今天评审的时候只改了两处小地方，直接通过，比想的顺","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：交付了？ ；助手：这么快 ；用户：对，比预期早，还多加了两个用例，稳，这次总算没返工","label":"10-得意","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这次上线我全程盯着，从灰度到全量没出岔子，最后一个检查项通过的时候，我把流程表上的格子一条条打钩，看着那排勾挺有成就感，总算没白折腾，晚上回去还多吃了半碗饭，睡前还在想那排勾的样子","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：我们队拿了第一，我打了全场","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"单位比赛我进了决赛","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：五公里跑进二十五分了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"我这次球赛进了两个，队友都服","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：厨艺比赛我拿了个小奖","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"我们组的方案在评选中排第一","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：我的作品进了最终展览","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：昨天那场比赛最后两分钟追平，加时又赢回来，散场的时候队友把我抱起来，嗓子都喊哑了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：拿奖了 ；助手：第几名？ ；用户：第一，我上台领的，照片都发群里了，现在还有人问","label":"10-得意","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这次比赛准备了一个多月，每天晚上练，正式比的时候前两轮落后，第三轮才追上，最后裁判念到我们名字的时候，我站在那儿愣了一下才反应过来，这一年练的东西没白练，回家把回放又看了好几遍","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：我学会做那道菜了，味道挺正","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"现在能自己修小家电了，成就感","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：我把那首曲子完整弹下来了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"我自学把那套软件摸熟了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：单词软件上连续打卡一百天","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"我照着视频把书架装好了，很稳","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：游泳终于能连续游五百米","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：跟着视频学了两周，今天第一次自己把整道菜做出来，家里人都说比外头的香，我心里还挺得意","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：那首曲子练会了？ ；助手：这么快 ；用户：今天从头到尾弹下来没卡，还录了一遍，自己听着都像样","label":"10-得意","source":"authored-b-1","note":"多轮"}
+{"text":"用户：年初连相机开关都找不着，现在光圈快门都搞得明白，今天给家里拍了一套照片，光线也调得挺好，挑出来那张放大了挂在墙上，看着挺像那么回事，来串门的人都问了，连我自己都觉得不太像以前的水平","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：卡了我三天的那个问题，今天找到根了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"那段代码的隐藏问题被我挖出来了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：家里漏水的管子我自己换好了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"我把那台老电脑救活了，能开机","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：锁卡了一年的门我终于修开了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"那个反复出现的怪现象，原因找到了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：我照着图把那台旧风扇拆了又装回去","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：这件事绕了好久，今天顺着一条线索一路查下去，最后发现是很小的一处，改完再跑一遍果然好了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：搞定没 ；助手：看你这样子有戏 ；用户：搞定了，绕了一大圈，根子就在一行，真是憋了好几天","label":"10-得意","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这台老设备放了好几年没动，今天上午拆开清了灰，换了两根线，又照着说明把接口一一对应上，通电那一刻风扇转起来，我蹲在那儿看了半天，心里特别痛快，第二天又拿另一台旧机器练了练手，也通了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：这次模拟考比上次高了十五分","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"我把整本教材的题做完了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：口语练了两个月，今天敢开口了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"这次听写全对，一次没停","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：科目三我也过了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"我背完了那本单词书，正好一百天","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：这个月的阅读目标提前完成","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：上个月还在为几道基础题发愁，这个月整套卷子做下来只错了两道，晚上跟家里说了一声，他们还不太信","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：卷子做完了 ；助手：感觉怎么样 ；用户：比上次顺，基本没卡住，剩下的时间还检查了一遍","label":"10-得意","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这学期的课我基本每一节都跟下来了，笔记记了两大本，周末复习的时候翻着看，发现很多当初没懂的地方现在能串起来，期末还差两周，我打算把题再过一遍，等考完想把这份笔记整理出来借给同学","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：我把家里收拾出来了，成就感满满","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"阳台种的番茄结了六个","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：这盆绿萝我救活了，还发了新叶","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"我自己组装了个小书架，稳当","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：把攒了半年的衣服全捐出去了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"新买的窗帘我自己挂上了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：搬家那几箱东西今天全归位了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：之前阳台一直堆着杂物，这周抽了两个晚上收拾，今天终于清出来了，还摆了张椅子进去","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：收拾完了？ ；助手：看着挺整齐 ；用户：对，一整天都在这儿弄，现在坐下来看着舒服多了","label":"10-得意","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这周末把厨房彻底清了一遍，柜子里的东西按用途归了类，调料按常用程度排了序，做完饭收拾起来顺手多了，晚上站在门口看了一会儿，觉得这半天没白干，家里像换了个样，连灶台和灯都擦了一遍","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：我写的小工具同事都在用","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"这次方案一次通过，没人提意见","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：我把后台的响应从两秒压到三百毫秒","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"那份报告我写完直接被采纳","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：我今天带的实习生独立完成任务了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"我们这条线这周零缺陷交付","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：我负责的那块提前收尾了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：之前那个总被反馈的流程，我重新梳理了一遍，改完跑了三天，没有一个人再提，今天开会还被点名说做得不错","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：这周的任务清完了？ ；助手：看你状态挺好 ；用户：全清，还顺手把两个遗留的也处理了，终于能松口气","label":"10-得意","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这个月我接了个没人愿意碰的老模块，花了三周把它理顺，文档补齐，测试也补上，今天验收一次过，之前提过的那些问题全都不见了，交出那刻挺爽，晚上还特意绕远路走了两站，回家路上还哼着歌","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：领导在群里点名表扬我了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"客户专门回信说这次做得好","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：同事说我这份文档写得清楚","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"我被评了本月的优秀，有点意外","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：导师夸我这版思路清楚","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"团队开完会专门发消息谢我","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：我提的建议被写进了规范","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：今天汇报完，几位同事过来问细节 ；助手：看来讲得不错 ；用户：他们说我这块做得细，其实我只是把该列的列清楚了","label":"10-得意","source":"authored-b-1","note":"多轮"}
+{"text":"用户：听说你在会上被点名了 ；助手：夸还是批 ；用户：夸，说这一季这一块做得最好，我脸上没表现，心里挺美","label":"10-得意","source":"authored-b-1","note":"多轮"}
+{"text":"用户：下午的总结会上，老板把这一季的几个亮点逐条说了，说到我负责的那一块时停顿了一下，说了一句做得好，散会后又有人专门过来问细节，我脸上没表现，心里挺受用，走出会议室的时候脚步都轻了","label":"10-得意","source":"authored-b-1","note":""}
+{"text":"用户：两份 offer 我拿不准，帮我理理","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"这工作要不要换，我想听听","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：我该留在大公司还是去小团队","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"两个岗位的取舍我一直想不清","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：我在纠结要不要跳槽","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"一边是稳定，一边是成长，怎么选","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：这份工作钱多但很远，值得吗","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：现在这份工作待了三年，涨薪不多，但同事都好；新机会给的待遇高一些，只是要重新适应，两边我都能说出一堆理由，反而更拿不定主意","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：我纠结好久了两份 offer ；助手：你更看重什么 ；用户：成长和稳定吧，可这两个现在不在一边","label":"11-思考","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这次换工作的事我想了一个月，把两份机会的优劣一条条写在本子上，列完发现两边的分数差不多，又去问了几个朋友，每个人给的答案都不一样，反而更乱了，现在连晚上躺着都在想这件事，越想越睡不着","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：这两门课先学哪个好","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"我该先补基础还是直接做题","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：自学还是报班，我摇摆不定","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"我想转个方向，先学什么更合适","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：考研还是先工作，我反复想","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"学英语是背单词还是多读原版","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：这个专业适不适合我，我拿不准","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：我对现在学的东西提不起兴趣，但换方向又要从头开始，两边都舍不得，想了好几个晚上也没想明白","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：我一直在犹豫 ；助手：纠结哪一点 ；用户：怕换了过去又后悔，可留在原地也不甘心，所以一直拖着","label":"11-思考","source":"authored-b-1","note":"多轮"}
+{"text":"用户：选专业这件事从高二想到现在，家里人给的意见是一套，自己的兴趣又是一套，我把每个方向的课表都翻了一遍，也问了在读的人，越问越觉得各有各的道理，迟迟没有定下来，眼看就要填志愿，实在头疼","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：这两款我挑了一个星期还没定","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"预算差不多，选哪个更划算","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：要不要买那台二手的，我犹豫","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"我这钱花在哪更值，帮我排排","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：一个便宜一个耐用，我选不动","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"现在换新还是再撑一年，我纠结","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：这两个配置差在哪，我该选谁","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：一台配置高但重，一台轻便但性能一般，我每天要带着走，又不常做重活，看了好多评测还是拿不定","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：我到底买哪个 ；助手：主要拿来做什么 ；用户：平时写写东西，偶尔修图，怕买错了用两年就卡","label":"11-思考","source":"authored-b-1","note":"多轮"}
+{"text":"用户：最近想换台笔记本，看了快两周，一会儿觉得轻便重要，一会儿又担心性能不够，中间还去店里摸了两回真机，回家又开始翻评测，越翻越不知道该信哪一篇，购物车里躺了三台，索性把购物车清空，真服了","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：晚上该学习还是去运动，我纠结","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"周末这两天怎么安排更值","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：手上三件事，先做哪件","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"加班和陪家人怎么平衡","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：这周要不要抽一天彻底休息","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"每天的时间怎么分才不浪费","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：我想学两样东西，时间只够一样","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：工作占得越来越满，家里的事总是往后拖，我知道这样下去不行，可又怕一放松下来进度就掉，两边都想要的结果，反而每天都在内耗","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：我现在每天都排得太满 ；助手：要减去哪一项 ；用户：就是不知道该减哪一项，每样都觉得不能少","label":"11-思考","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这个问题想了挺久，把一天从早到晚记了几天，发现真正有产出的时间只有三四个小时，剩下都在应付琐事，但要腾出整块时间，就得推掉一些看起来也挺重要的事，而这些事又不知道交给谁做，越想越闷","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：两个方案各有代价，我选不出来","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"这套做法要不要换，我想听分析","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：是先做稳定的，还是先试新的","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"现在改还是等下次一起改","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：这两条路哪条风险小一点","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"我该不该把旧的那套推倒重来","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：团队里两种意见对立，我不好定","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：一条路是慢慢改，风险小但拖得长；一条是整体换掉，一次到位但中间不能出岔子，我两边都算过，还没有把握","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：我倾向换掉 ；助手：担心哪里 ；用户：担心过渡期，万一中途出问题，谁来兜，而且时间点也不好选","label":"11-思考","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这件事在组里讨论了两个星期，一派主张稳一点分步走，一派觉得拖下去成本更高，我把两边的顾虑都记下来了，也找了几位用过类似做法的人聊，听到的说法也不一致，还得自己拿主意，可越是听多了越没底","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：这话我要不要跟他说清楚","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"该直接讲还是委婉一点，我犹豫","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：朋友做的这件事我要不要提","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"我要不要主动道个歉，想了很久","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：这个拒绝怎么说才不伤人","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"我该不该把实话说出来，有点怕","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：跟长辈沟通这个话题合适吗","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：有位同事总把活推过来，我一直忍着，最近想把话说开，又怕以后见面尴尬，不知道从哪句开始","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：我准备跟他谈一次 ；助手：想好怎么开头了吗 ；用户：还没，怕一开口就变成吵架，那样就更糟了","label":"11-思考","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这件事在心里压了两个月，一边觉得不说明白就一直别扭，一边又怕说开了连现在的关系都保不住，我在纸上写了几种说法，每种写到一半就停了，最后全揉成一团扔进抽屉，到现在也没开口，纸都揉烂了","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：这个活动我要不要去，犹豫","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"报名截止前我还没决定","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：要不要接这个项目，我在想","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"这个机会适不适合我，我拿不准","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：我要不要去参加那个比赛","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"我该不该主动争取这个名额","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：这活接了会不会忙不过来","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：机会挺好的，只是时间正好压在我最忙的那一个月，去了怕顾不过来，不去又觉得可惜","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：我在想要不要报名 ；助手：最大的顾虑是什么 ；用户：怕做不完，还怕半途退出比不参加更难看","label":"11-思考","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这个名额在组里没人主动要，领导问了一圈，现在落到我这边，接了要多担一份责任，不接又像是把机会让出去，我把要花的时间粗粗算了一遍，还是没下决心，晚上又问了一位前辈，到现在也没回话","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：要不要养只猫，我犹豫半年","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"搬出去住还是继续合租","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：今年要不要回老家发展","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"该不该报个兴趣班，我拿不准","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：要不要把车卖了换通勤","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"现在换城市是不是太早","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：这笔钱先存还是先花，我纠结","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：一个人在现在的城市待了五年，朋友都在这边，家里却一直希望我回去，两边都有舍不得的人和事","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：我在想要不要回去 ；助手：最放不下的是什么 ；用户：这边的生活，可爸妈年纪也上来了，这事越想越沉","label":"11-思考","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这个问题每年都要想一遍，回去有回去的安稳，留下有留下的可能，我把两边的日常都设想了一遍，连早上出门的路线、周末会去哪都想过，越想越觉得两种都能过下去，可时间一年年在走，想着想着就叹气","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：这件事我越想越乱，帮我理理","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"两个都想要，可只能选一个","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：我拿不定主意，先听你说说","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"这个选择会不会后悔，我在想","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：我怕选错，一直拖着没动","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"是现在就定，还是再等等看","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：这两边的好处我都想要，怎么办","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：条件列出来其实差不多 ；助手：差别在哪 ；用户：差别在于我更在乎哪一个，可连这一点我自己都没想清楚","label":"11-思考","source":"authored-b-1","note":"多轮"}
+{"text":"用户：我这样想对吗 ；助手：你更在意哪一点 ；用户：就是不知道更在意什么，所以才一直拖着，问谁都问不出答案","label":"11-思考","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这阵子遇到好几个需要拍板的事，每一件都不算大，可凑在一起就让人发怵，我把它们列成一张表，标上截止时间，看着那些日期一天天靠近，还是没动手，最后干脆把表挪到抽屉里，眼不见心不烦，也就这样","label":"11-思考","source":"authored-b-1","note":""}
+{"text":"用户：小Q，在不在","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"小Q小Q，出来，我喊你了","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：小Q，小Q，听见没有，我喊了好几声了，隔壁屋都听得见，这边一点动静没有，我也没办法","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"助手，叫你一下，在不在","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：小Q，喊你呢，我在阳台上晾衣服，手上都是水，只能隔着门喊，喊了两声没反应，把水甩干又喊了一句，还是安静，就走进来敲了几下键盘，再叫一遍，看看这回有没有反应，结果还是没人应，只好算了","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"喂，小Q，应一声","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：小Q，我叫你一下，刚才在另一个窗口忙别的，回来一抬头发现这边半天没动静，心里有点不踏实，就随手叫一声，看看是不是还在，要是不在就再翻翻设置","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：小Q，你在吗，我刚才在客厅喊了两声都没反应，又走到这边叫了一句，还是安静，不知道是不是没开","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：小Q ；助手：在的，有什么需要 ；用户：先别答，我再叫一声，确认下没听错，刚才好像没应上","label":"12-被叫到","source":"authored-b-1","note":"多轮"}
+{"text":"用户：我在客厅喊了两声小Q，没听见回应，又走到书房门口喊了一次，还是安静，就想着是不是得在这儿打字叫它，先试一句看看有没有人应，要是再没动静，我就得去看看设置里是不是关掉了，前前后后折腾了快十分钟","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：测试一下，你还在线吗","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"我先试试看你在不在","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：喂一声，我看看通不通","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"在不在，回个话确认下","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：第一次用，先呼叫你一下","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"你那边有反应吗，我测一下","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：来个回应，我确认连接正常","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：刚接好这边，先随便叫一声，看看有没有回应，反正就是确认一下，通了再往下说","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：你在吗 ；助手：在的 ；用户：好，通了，我就是测一下，没别的事，先这样，回头有事再找你","label":"12-被叫到","source":"authored-b-1","note":"多轮"}
+{"text":"用户：装好之后按说明点了一下，界面没反应，我又退出重进了一次，还是安静，干脆在输入框里喊一句，看是不是我哪里没弄对，要是这句也没回应，就再翻一遍说明书的开头部分，顺便看看有没有遗漏的步骤","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：出来出来，快点儿","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"快点回应，我等着呢","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：别装死，冒个泡","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"人呢人呢，冒个泡","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：快出来，喊你半天了","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"你倒是说话呀，喊你呢","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：磨蹭什么呢，快应一声","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：叫你半天了，一点动静都没有，先去倒了杯水回来还是安静","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：出来 ；助手：来了 ；用户：这才对，刚才连喊了三遍都没人应，还以为你不在，正打算关掉","label":"12-被叫到","source":"authored-b-1","note":"多轮"}
+{"text":"用户：早上开始就在等它回应，先发了一句，没动静，又发了第二句，还是没反应，到了下午实在忍不住，连着喊了几声名字，就盼着有个回应，喊完自己都觉得有点好笑，但也没别的办法，来回试了好几遍","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：小Q，我来了，先点个名","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"助手，我上线了，叫你一声","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：小Q，早，找你报到","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"我来了，先喊你一下","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：小Q，久等了，我到了","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"嗨，助手，出来接一下","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：小Q，我回来了，先喊一声","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：我这边刚忙完，水都没喝一口就过来点个名，看你还在不在，在的话就应一声","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：我回来了 ；助手：欢迎回来 ；用户：先叫你一声，看看还在不在原位，没挪地方吧，刚才一阵没动静","label":"12-被叫到","source":"authored-b-1","note":"多轮"}
+{"text":"用户：今天一天没顾上，晚上终于坐到电脑前，第一件事就是敲了一下它的名字，想看看这么半天过去还有没有人在，也算给自己一个开始，敲完又顺手把窗口拉到最前面，怕它被别的挡住了，来回试了好几遍","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：点名了，轮到你","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"到你了，应一下，别不吭声","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：我叫到你了，答个到","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"该你了，别不吭声","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：被点到名了，赶紧出来","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"念到你了，出个声","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：把你叫起来，答一句","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：开会点名，喊到它的时候没人应，我又叫了一遍，还是没反应，就想着是不是得单独叫","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：点名了 ；助手：在 ；用户：好，答到了就行，我接着念下一个，别卡住，后面还有几位","label":"12-被叫到","source":"authored-b-1","note":"多轮"}
+{"text":"用户：组里轮流点一遍名字，前面几位都应得快，到它这儿停了很久，我又重复了一次名字，才有点动静，就为了确认它还在，点完之后在名单上打了个勾，接着往下走，心里也踏实一点，折腾到后来也懒得管","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：你是小Q吧，我喊一声试试","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"喂，那边的是小Q吗","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：我先确认一下是不是你，应一声","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"你是哪位，先应我一句","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：小Q，是你吗，回一句","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"叫一下，看是不是我要找的那个","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：先确认你在，我再往下说","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：这个名字我记不太准，先说一半看有没有人应，要是应了再补上，免得叫错人，那就白叫了","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：是小Q吗 ；助手：是我 ；用户：好，那就对了，先确认一下，我怕叫错，叫错就尴尬了，那就白喊半天","label":"12-被叫到","source":"authored-b-1","note":"多轮"}
+{"text":"用户：家里新装了一个，我把几个名字都试了一遍，前几个都没反应，到这个名字的时候终于有了动静，就先停在这儿，确认清楚是哪一个，免得后面一直叫错，弄清楚之后才敢往下用，毕竟也没个人可问也认了","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：在吗，在吗，再说一遍","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"喂喂喂，听得到吗","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：第三次叫你了，出来","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"我说了三声了，你应一下","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：我喊了四遍，你总算动一下","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"回应一下，不然我继续喊","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：再不吭声我就当你不在","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：前面叫了两次没反应，这次我加上了名字又叫一遍，还是没动静，只好一直喊下去，喊得嗓子都干了","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：小Q，小Q ；助手：我在 ；用户：好，终于应了，我前后喊了五次，才听见动静，还以为坏了","label":"12-被叫到","source":"authored-b-1","note":"多轮"}
+{"text":"用户：从下午开始，断断续续叫了好几回，有时候应得快，有时候半天没动静，我也不确定是网络还是我喊得不对，就一直试，试到后来自己都记不清喊了几次，反正有回应就算过，没回应就再来一次也认了","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：小Q，过来搭把手，先应一声","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"有活让你做，先在不在","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：我这边要开工了，先叫你","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"别忙别的，我这儿叫你","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：开工前先点个名","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"准备干活了，你先应一下","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：我要分配任务了，先确认你在","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：我这边的流程是先点确认再安排事，所以先叫一句，看你有没有回应，有了再往下走，不急","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：我要开始干活了 ；助手：好 ；用户：先叫你一声，接下来可能一直有活，别走开，忙完再歇","label":"12-被叫到","source":"authored-b-1","note":"多轮"}
+{"text":"用户：桌子上摊着一堆材料，我打算从最急的一份开始，动手前习惯先叫一声，看看它在不在，算是给自己一个开始的信号，叫完之后把笔帽拧开，心里也定下来一点，接着就往下做，叫完就埋头往下做，不再耽搁","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：还醒着吗，我叫你一声","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"夜深了，喊一句看看谁在","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：这个点打扰一下，先叫你","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"睡不着，随便叫叫你","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：凌晨了，喊一声有人应吗","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"深夜了，冒个泡吧","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：这个点叫你还理人吗","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：还醒着吗 ；助手：在的 ；用户：好，就叫一声，没别的事，屋里挺安静的，有点声音也好","label":"12-被叫到","source":"authored-b-1","note":"多轮"}
+{"text":"用户：喂，还在不在 ；助手：在的 ；用户：好，我随口叫叫，确认一下没掉线，这就放心了，接着睡","label":"12-被叫到","source":"authored-b-1","note":"多轮"}
+{"text":"用户：夜里总是容易想东想西，睡不着就随手叫它一声，有时它应得快，有时慢一点，反正有回应就好，听着也安心，叫完翻个身，把手机放回床头，还是没睡着，也就这样了","label":"12-被叫到","source":"authored-b-1","note":""}
+{"text":"用户：这个药一天吃几次，饭前还是饭后","label":"none","source":"authored-b-1","note":""}
+{"text":"我的检查单上有几项偏高，需要复查吗","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：这个剂量孩子能用吗，按体重怎么算","label":"none","source":"authored-b-1","note":""}
+{"text":"最近总是头晕，该挂哪个科","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：这两种药能一起吃吗，我怕冲突","label":"none","source":"authored-b-1","note":""}
+{"text":"这个指标超出参考范围多少算严重","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：我想问下这个症状一般多久能好","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：化验单上三项标了箭头 ；助手：这个要问医生 ；用户：我看不懂，家里人让我先别自己查，还是问问清楚比较好，省得瞎猜","label":"none","source":"authored-b-1","note":"多轮"}
+{"text":"用户：这个药怎么吃 ；助手：这方面建议咨询医生 ；用户：我就是想知道饭前还是饭后，说明书看不懂","label":"none","source":"authored-b-1","note":"多轮"}
+{"text":"用户：我最近半个月总是凌晨三点多醒，醒了就很难再睡着，白天头也沉，一开始以为是累了，可休息了几天也没好转，想问问这种情况应该怎么处理，要不要去医院做个检查，家里人也一直在催，我自己也有点担心","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：合同里这条违约金合法吗","label":"none","source":"authored-b-1","note":""}
+{"text":"我这个情况能不能申请仲裁","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：劳动合同到期不续，补偿怎么算","label":"none","source":"authored-b-1","note":""}
+{"text":"邻居改结构影响采光，能起诉吗","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：这个条款有歧义，法律上怎么解释","label":"none","source":"authored-b-1","note":""}
+{"text":"租房押金不退，我该走什么程序","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：借条没写还款日期，还有效吗","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：这个合同要不要签 ；助手：哪条有疑问 ；用户：违约那一条，我不太确定是不是对我太不利，想先问清楚","label":"none","source":"authored-b-1","note":"多轮"}
+{"text":"用户：押金不退这条有效吗 ；助手：要看具体约定 ；用户：合同里写了一条，我看了几遍也不确定，也找不到人能问","label":"none","source":"authored-b-1","note":"多轮"}
+{"text":"用户：公司让我签一份补充协议，里面有几条我读不太明白，尤其是关于竞业的那段，说是离职后两年不能做同类工作，我想知道这在法律上有没有效力，需要准备什么材料，如果不签会有什么影响，这些都得先弄清楚","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：这笔钱放哪里收益高一点","label":"none","source":"authored-b-1","note":""}
+{"text":"我该不该现在把手里的基金卖掉","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：年化怎么算，我算不明白","label":"none","source":"authored-b-1","note":""}
+{"text":"这种分期和一次性付，哪个成本低","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：公积金能不能用来还商贷","label":"none","source":"authored-b-1","note":""}
+{"text":"这笔钱分几份投比较稳妥","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：我该先还房贷还是先存钱","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：手上有二十万，一部分想留着应急 ；助手：剩下的打算怎么放 ；用户：就是不知道放哪，看了几种方式，各有各的说法，也拿不准","label":"none","source":"authored-b-1","note":"多轮"}
+{"text":"用户：我要不要把贷款提前还 ；助手：需要看你现金流 ；用户：那具体怎么判断呢，我没什么经验，怕算错","label":"none","source":"authored-b-1","note":"多轮"}
+{"text":"用户：家里这半年攒下一笔钱，放在活期里几乎没收益，想找个稳一点的方式，又怕锁住取不出来，看了几篇文章说法都不一样，不知道该信哪个，问了几个人也各说各的，越听越糊涂，心里也没个底，干脆不动","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：这个报错第三行是什么意思","label":"none","source":"authored-b-1","note":""}
+{"text":"我把日志贴过来了，你看下","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：部署脚本跑到一半退出了，什么原因","label":"none","source":"authored-b-1","note":""}
+{"text":"这个堆栈最上面一层指向哪里","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：服务起不来，日志里全是同样的提示","label":"none","source":"authored-b-1","note":""}
+{"text":"构建报了六个错，先看哪个","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：升级之后接口全部超时，怎么回滚","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：环境里一跑起来就退出 ；助手：日志最后一段是什么 ；用户：是一串堆栈，前面几行我看不懂，也找不到相关说明","label":"none","source":"authored-b-1","note":"多轮"}
+{"text":"用户：还是不行 ；助手：把完整日志发我 ；用户：好，我复制过来了，从第一行开始，中间有几行重复的","label":"none","source":"authored-b-1","note":"多轮"}
+{"text":"用户：本地跑得好好的，上了服务器就报同样的错，日志从启动那行开始就有异常，堆栈里指向一个配置文件，我把整个日志按时间顺序整理了一遍，想先弄清楚是从哪一步开始出问题的，试了两个版本都一样","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：我的订单怎么还没发货","label":"none","source":"authored-b-1","note":""}
+{"text":"退款申请提交三天了没动静","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：账号登录不上，一直提示密码错误","label":"none","source":"authored-b-1","note":""}
+{"text":"这笔扣款我没印象，要查一下","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：地址填错了，能改吗","label":"none","source":"authored-b-1","note":""}
+{"text":"我要取消这单，流程在哪","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：会员自动续费怎么关掉","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：下单的时候选的是一周内送达，现在系统显示的时间又变了，我想确认下到底以哪个为准，也好安排时间","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：退款流程走到哪一步了，我提交了三天也没收到任何通知，页面上只显示处理中，也没人联系我","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：这个账号是我几年前注册的，绑定的手机号早就不用了，现在想改也改不了，申诉了几次都卡在验证这一步，实在不知道该怎么办，中间打过一次客服也只说让等通知，等到现在也没消息，现在只能干着急","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：把这段 JSON 格式化一下","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：帮我把这几行按字母排序","label":"none","source":"authored-b-1","note":""}
+{"text":"文件的编码改一下，转成 UTF8","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：这一列数据要按日期升序重排，空的那几行放到最后，另外小数点统一保留两位，别的不要动，格式照旧","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：嗯，我知道了，就这样","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：好，那就先这样","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：随便，你看着办吧","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：在吗 ；助手：在的 ；用户：哦，没什么事，先这样","label":"none","source":"authored-b-1","note":"多轮"}
+{"text":"用户：我要正式投诉这个服务，从上周开始这个问题一直没解决，我这边已经留了全部记录，希望今天能有一个明确的答复","label":"none","source":"authored-b-1","note":""}
+{"text":"用户：这份名单里有一列是完整手机号 ；助手：个人信息要注意处理 ；用户：我知道，所以想先按规则打码再交出去，具体怎么处理我拿不准，也不想因为这个出问题，你帮我把顺序理一下，另外哪些字段可以留原样也得说清楚，我不想返工","label":"none","source":"authored-b-1","note":"多轮"}

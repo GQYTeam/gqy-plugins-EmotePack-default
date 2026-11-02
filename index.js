@@ -12,10 +12,12 @@ const path = require('path');
 
 const ROOT = __dirname;
 const PLUGIN_ID = 'emote-pack-default';
-const VERSION = '1.0.0';
+const VERSION = '1.1.0';
 const ASSETS_FILE = path.join(ROOT, 'data', 'assets.json');
-const ACTIONS = ['list', 'show', 'match'];
+const MODEL_FILE = path.join(ROOT, 'data', 'emote-model.json');
+const ACTIONS = ['list', 'show', 'match', 'suggest'];
 const HINT_NO_MATCH = '没有匹配的表情，可用 list 查看全部';
+const HINT_NO_EMOTE = '该语境不适合发表情';
 const PNG_MAGIC = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
 
 // macOS / Windows 在目录里自动生成的系统元数据：不是资产，也不算「多余文件」。
@@ -36,6 +38,8 @@ const state = {
   byName: new Map(),
   byFile: new Map(),
   error: null,
+  // 语境模型：首次使用时懒加载，之后常驻缓存（只解析一次）。
+  model: null,
 };
 
 function logStderr(text) {
@@ -317,7 +321,14 @@ function toListEntry(item) {
 function actionList() {
   const emotes = state.emotes.map(toListEntry);
   const motions = state.motions.map(toListEntry);
-  return { count: emotes.length + motions.length, emotes, motions };
+  // 语境模型元信息是只读展示字段；模型缺失/损坏不影响 list（既有行为不回退）。
+  let model = null;
+  try {
+    model = modelMetadata();
+  } catch {
+    model = null;
+  }
+  return { count: emotes.length + motions.length, emotes, motions, model };
 }
 
 function toDataUri(item) {
@@ -416,11 +427,278 @@ function actionMatch(args) {
   return out;
 }
 
+// ---------- 语境模型（语境 → 表情，零依赖 JS 推理） ----------
+// 契约：train/model-format.md。权重来自 data/emote-model.json（训练产物），插件只读、不联网、不引第三方库。
+
+function round6(value) {
+  return Math.round(value * 1e6) / 1e6;
+}
+
+// 第 4 节步骤 1：Unicode NFKC → 全部转小写 → 删除所有空白。
+// 空白集合与 Python 的 \s / str.isspace 对齐（含 U+001C–U+001F、U+0085；不含 BOM U+FEFF 与零宽空格 U+200B），保证 Python↔JS parity。
+const WHITESPACE_RE = /[\t\n\v\f\r \u001c-\u001f\u0085\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000]+/g;
+
+function normalizeContext(text) {
+  return [...text.normalize('NFKC').toLowerCase().replace(WHITESPACE_RE, '')];
+}
+
+function badModel(why) {
+  throw new Error('语境模型损坏：' + why);
+}
+
+function requireFiniteNumberArray(value, where) {
+  if (!Array.isArray(value)) badModel(where + ' 必须是数组');
+  for (let i = 0; i < value.length; i += 1) {
+    if (typeof value[i] !== 'number' || !Number.isFinite(value[i])) {
+      badModel(where + '[' + i + '] 不是有限数字');
+    }
+  }
+  return value;
+}
+
+function compileModel(raw, sizeBytes) {
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) badModel('根节点必须是对象');
+  if (raw.schema !== 1) badModel('schema 应为 1，实际 ' + JSON.stringify(raw.schema));
+  if (raw.task !== 'context-emote-clf') badModel('task 应为 context-emote-clf');
+  if (typeof raw.trained_at !== 'string' || !raw.trained_at.trim()) badModel('trained_at 缺失');
+  if (typeof sizeBytes !== 'number' || sizeBytes <= 0) badModel('文件大小异常');
+  if (sizeBytes > 600 * 1024) badModel('模型文件超过 600KB 预算（实际 ' + sizeBytes + ' 字节）');
+
+  const metrics = raw.metrics && typeof raw.metrics === 'object' && !Array.isArray(raw.metrics) ? raw.metrics : null;
+  if (!metrics) badModel('metrics 缺失');
+  for (const key of ['val_acc1', 'holdout_acc1', 'none_recall']) {
+    if (typeof metrics[key] !== 'number' || !Number.isFinite(metrics[key])) {
+      badModel('metrics.' + key + ' 缺失或不是数字');
+    }
+  }
+
+  const input = raw.input && typeof raw.input === 'object' && !Array.isArray(raw.input) ? raw.input : null;
+  if (!input) badModel('input 缺失');
+  if (input.normalize !== 'nfkc-lower-strip-all-whitespace') {
+    badModel('input.normalize 不受支持：' + JSON.stringify(input.normalize));
+  }
+  if (input.max_chars !== 120) badModel('input.max_chars 应为 120');
+  if (JSON.stringify(input.ngram_order) !== JSON.stringify([1, 2, 3])) badModel('input.ngram_order 应为 [1,2,3]');
+  if (input.feature_value !== 'binary') badModel('input.feature_value 应为 binary');
+
+  const vocab = input.vocab;
+  if (!Array.isArray(vocab) || vocab.length === 0 || vocab.length > 1600) {
+    badModel('input.vocab 应为 1–1200 项的数组');
+  }
+  const vocabIndex = new Map();
+  for (let i = 0; i < vocab.length; i += 1) {
+    const gram = vocab[i];
+    if (typeof gram !== 'string' || gram.length === 0) badModel('input.vocab[' + i + '] 必须是非空字符串');
+    if (!vocabIndex.has(gram)) vocabIndex.set(gram, []);
+    vocabIndex.get(gram).push(i);
+  }
+
+  const classes = raw.classes;
+  const emoteCount = state.emotes.length;
+  if (!Array.isArray(classes) || classes.length !== emoteCount + 1) {
+    badModel('classes 长度应为 ' + (emoteCount + 1) + '（24 表情 + none）');
+  }
+  for (let i = 0; i < emoteCount; i += 1) {
+    if (classes[i] !== state.emotes[i].name) {
+      badModel('classes 顺序与 data/assets.json 表情清单不一致（第 ' + i + ' 项：' + JSON.stringify(classes[i]) + '）');
+    }
+  }
+  if (classes[emoteCount] !== 'none') badModel('classes 末位应为 none');
+
+  const m = raw.model && typeof raw.model === 'object' && !Array.isArray(raw.model) ? raw.model : null;
+  if (!m) badModel('model 缺失');
+  if (m.type !== 'mlp-tanh-softmax') badModel('model.type 应为 mlp-tanh-softmax');
+  if (m.hidden !== 32) badModel('model.hidden 应为 32（预算硬上限），实际 ' + JSON.stringify(m.hidden));
+  const hidden = m.hidden;
+  const classesCount = classes.length;
+
+  const b1 = requireFiniteNumberArray(m.b1, 'model.b1');
+  if (b1.length !== hidden) badModel('model.b1 长度应为 ' + hidden);
+  const b2 = requireFiniteNumberArray(m.b2, 'model.b2');
+  if (b2.length !== classesCount) badModel('model.b2 长度应为 ' + classesCount);
+
+  const w1 = m.w1;
+  if (!Array.isArray(w1) || w1.length !== vocab.length) badModel('model.w1 行数应为 vocab 长度 ' + vocab.length);
+  const w1Flat = new Float64Array(vocab.length * hidden);
+  for (let i = 0; i < w1.length; i += 1) {
+    const row = requireFiniteNumberArray(w1[i], 'model.w1[' + i + ']');
+    if (row.length !== hidden) badModel('model.w1[' + i + '] 长度应为 ' + hidden);
+    for (let j = 0; j < hidden; j += 1) w1Flat[i * hidden + j] = row[j];
+  }
+
+  const w2 = m.w2;
+  if (!Array.isArray(w2) || w2.length !== hidden) badModel('model.w2 行数应为 hidden ' + hidden);
+  const w2Flat = new Float64Array(hidden * classesCount);
+  for (let j = 0; j < w2.length; j += 1) {
+    const row = requireFiniteNumberArray(w2[j], 'model.w2[' + j + ']');
+    if (row.length !== classesCount) badModel('model.w2[' + j + '] 长度应为 ' + classesCount);
+    for (let k = 0; k < classesCount; k += 1) w2Flat[j * classesCount + k] = row[k];
+  }
+
+  return {
+    schema: raw.schema,
+    task: raw.task,
+    trained_at: raw.trained_at,
+    classes,
+    classesCount,
+    vocabIndex,
+    maxChars: 120,
+    hidden,
+    w1Flat,
+    b1: Float64Array.from(b1),
+    w2Flat,
+    b2: Float64Array.from(b2),
+    sizeBytes,
+    metrics,
+  };
+}
+
+// 懒加载：首次建议/list 取元信息时读盘解析，之后常驻缓存（只解析一次）。
+function loadModel() {
+  if (state.model) return state.model;
+  let text;
+  try {
+    text = fs.readFileSync(MODEL_FILE, 'utf8');
+  } catch (err) {
+    throw new Error('语境模型不可用：无法读取 data/emote-model.json（' + err.message + '）');
+  }
+  let raw;
+  try {
+    raw = JSON.parse(text);
+  } catch (err) {
+    throw new Error('语境模型不可用：data/emote-model.json 不是合法 JSON（' + err.message + '）');
+  }
+  let sizeBytes = Buffer.byteLength(text, 'utf8');
+  try {
+    sizeBytes = fs.statSync(MODEL_FILE).size;
+  } catch {
+    // 用文本字节数兜底
+  }
+  state.model = compileModel(raw, sizeBytes);
+  return state.model;
+}
+
+// 第 4 节步骤 1–6：末尾 120 码点 → 1/2/3-gram → binary 特征 → tanh MLP → softmax。
+function inferProbabilities(model, text) {
+  const chars = normalizeContext(text).slice(-model.maxChars);
+  const hit = new Set();
+  for (let i = 0; i < chars.length; i += 1) {
+    for (let n = 1; n <= 3 && i + n <= chars.length; n += 1) {
+      const indexes = model.vocabIndex.get(chars.slice(i, i + n).join(''));
+      if (indexes) {
+        for (const index of indexes) hit.add(index);
+      }
+    }
+  }
+  const h = new Float64Array(model.hidden);
+  for (let j = 0; j < model.hidden; j += 1) h[j] = model.b1[j];
+  for (const index of hit) {
+    const base = index * model.hidden;
+    for (let j = 0; j < model.hidden; j += 1) h[j] += model.w1Flat[base + j];
+  }
+  for (let j = 0; j < model.hidden; j += 1) h[j] = Math.tanh(h[j]);
+  const logits = new Float64Array(model.classesCount);
+  for (let k = 0; k < model.classesCount; k += 1) logits[k] = model.b2[k];
+  for (let j = 0; j < model.hidden; j += 1) {
+    const hValue = h[j];
+    if (hValue === 0) continue;
+    const base = j * model.classesCount;
+    for (let k = 0; k < model.classesCount; k += 1) logits[k] += hValue * model.w2Flat[base + k];
+  }
+  let max = -Infinity;
+  for (let k = 0; k < model.classesCount; k += 1) {
+    if (logits[k] > max) max = logits[k];
+  }
+  const probs = new Float64Array(model.classesCount);
+  let sum = 0;
+  for (let k = 0; k < model.classesCount; k += 1) {
+    const value = Math.exp(logits[k] - max);
+    probs[k] = value;
+    sum += value;
+  }
+  for (let k = 0; k < model.classesCount; k += 1) probs[k] /= sum;
+  let argmax = 0;
+  for (let k = 1; k < model.classesCount; k += 1) {
+    if (probs[k] > probs[argmax]) argmax = k;
+  }
+  return { probs: Array.from(probs), argmax };
+}
+
+function modelMetadata() {
+  const model = loadModel();
+  const metrics = {
+    val_acc1: model.metrics.val_acc1,
+    holdout_acc1: model.metrics.holdout_acc1,
+    none_recall: model.metrics.none_recall,
+  };
+  // 模型卡扩展指标：训练产物提供时才暴露（保持向后兼容）。
+  for (const key of ['holdout_acc5', 'coverage_70_top1_precision']) {
+    if (typeof model.metrics[key] === 'number' && Number.isFinite(model.metrics[key])) {
+      metrics[key] = model.metrics[key];
+    }
+  }
+  return {
+    schema: model.schema,
+    trained_at: model.trained_at,
+    classes: model.classesCount,
+    metrics,
+    size_bytes: model.sizeBytes,
+  };
+}
+
+// suggest：语境 → 表情。limit 只影响返回条数，不影响决策（第 4 节步骤 7）。
+function actionSuggest(args) {
+  const rawContext = args.context;
+  if (typeof rawContext !== 'string') {
+    throw new ParamError('参数非法：context 必须是 1–2000 字符的字符串');
+  }
+  const contextChars = [...rawContext].length;
+  if (contextChars < 1 || contextChars > 2000) {
+    throw new ParamError('参数非法：context 长度必须是 1–2000 字符（实际 ' + contextChars + '）');
+  }
+  if (rawContext.trim() === '') {
+    throw new ParamError('参数非法：context 不能只有空白字符');
+  }
+  let limit = 3;
+  if (args.limit !== undefined) {
+    if (!Number.isInteger(args.limit) || args.limit < 1 || args.limit > 5) {
+      throw new ParamError('参数非法：limit 必须是 1–5 的整数');
+    }
+    limit = args.limit;
+  }
+  const model = loadModel(); // 缺失/损坏时抛 Error，由 handleCall 映射成 -32000
+  const { probs, argmax } = inferProbabilities(model, rawContext);
+  const noneIndex = model.classesCount - 1;
+  const out = {
+    decision: argmax === noneIndex ? 'none' : 'emote',
+    none_score: round6(probs[noneIndex]),
+  };
+  if (argmax === noneIndex) {
+    out.predictions = [];
+    out.hint = HINT_NO_EMOTE;
+    return out;
+  }
+  const ranked = [];
+  for (let index = 0; index < noneIndex; index += 1) {
+    ranked.push({ index, score: probs[index] });
+  }
+  ranked.sort((a, b) => b.score - a.score || a.index - b.index);
+  out.predictions = ranked.slice(0, limit).map(({ index, score }) => ({
+    name: model.classes[index],
+    label: state.emotes[index].label,
+    score: round6(score),
+    file: state.emotes[index].file,
+  }));
+  return out;
+}
+
 const HANDLERS = {
   list: actionList,
   show: actionShow,
   match: actionMatch,
+  suggest: actionSuggest,
 };
+
 
 // ---------- JSON-RPC ----------
 
@@ -500,61 +778,74 @@ try {
   logStderr('资产清单加载失败：' + (err && err.message ? err.message : String(err)));
 }
 
-let shuttingDown = false;
+function startServer() {
+  let shuttingDown = false;
 
-const rl = readline.createInterface({ input: process.stdin, crlfDelay: Infinity });
+  const rl = readline.createInterface({ input: process.stdin, crlfDelay: Infinity });
 
-rl.on('line', (line) => {
-  if (shuttingDown) return;
-  const trimmed = line.trim();
-  if (!trimmed) return;
-  let msg;
-  try {
-    msg = JSON.parse(trimmed);
-  } catch {
-    writeLine(errorReply(null, -32700, '非法 JSON：无法解析该行'));
-    return;
-  }
-  let out;
-  try {
-    out = handleMessage(msg);
-  } catch (err) {
-    out = { reply: errorReply(null, -32000, err && err.message ? err.message : '内部错误') };
-  }
-  if (!out || !out.reply) return;
-  if (out.shutdown) {
-    shuttingDown = true;
-    writeLine(out.reply, () => process.exit(0));
-    // 兜底：回包写不出去时也不无限挂住。
-    const force = setTimeout(() => process.exit(0), 2000);
-    force.unref();
-    return;
-  }
-  writeLine(out.reply);
-});
+  rl.on('line', (line) => {
+    if (shuttingDown) return;
+    const trimmed = line.trim();
+    if (!trimmed) return;
+    let msg;
+    try {
+      msg = JSON.parse(trimmed);
+    } catch {
+      writeLine(errorReply(null, -32700, '非法 JSON：无法解析该行'));
+      return;
+    }
+    let out;
+    try {
+      out = handleMessage(msg);
+    } catch (err) {
+      out = { reply: errorReply(null, -32000, err && err.message ? err.message : '内部错误') };
+    }
+    if (!out || !out.reply) return;
+    if (out.shutdown) {
+      shuttingDown = true;
+      writeLine(out.reply, () => process.exit(0));
+      // 兜底：回包写不出去时也不无限挂住。
+      const force = setTimeout(() => process.exit(0), 2000);
+      force.unref();
+      return;
+    }
+    writeLine(out.reply);
+  });
 
-// stdin EOF = 父进程已关闭输入，自退（04 P8 最后一道防线）。
-rl.on('close', () => {
-  if (shuttingDown) return;
-  process.exitCode = 0;
-});
+  // stdin EOF = 父进程已关闭输入，自退（04 P8 最后一道防线）。
+  rl.on('close', () => {
+    if (shuttingDown) return;
+    process.exitCode = 0;
+  });
 
-process.stdin.on('error', (err) => {
-  logStderr('stdin 错误：' + (err && err.message ? err.message : String(err)));
-  process.exit(0);
-});
+  process.stdin.on('error', (err) => {
+    logStderr('stdin 错误：' + (err && err.message ? err.message : String(err)));
+    process.exit(0);
+  });
 
-process.stdout.on('error', (err) => {
-  // 宿主已经断开管道，正常结束即可。
-  if (err && err.code === 'EPIPE') process.exit(0);
-  logStderr('stdout 错误：' + (err && err.message ? err.message : String(err)));
-});
+  process.stdout.on('error', (err) => {
+    // 宿主已经断开管道，正常结束即可。
+    if (err && err.code === 'EPIPE') process.exit(0);
+    logStderr('stdout 错误：' + (err && err.message ? err.message : String(err)));
+  });
 
-// 最后防线：任何意外都只记 stderr，不让常驻进程崩掉。
-process.on('uncaughtException', (err) => {
-  logStderr('未捕获异常：' + (err && err.stack ? err.stack : String(err)));
-});
+  // 最后防线：任何意外都只记 stderr，不让常驻进程崩掉。
+  process.on('uncaughtException', (err) => {
+    logStderr('未捕获异常：' + (err && err.stack ? err.stack : String(err)));
+  });
 
-process.on('unhandledRejection', (reason) => {
-  logStderr('未处理的 Promise 拒绝：' + (reason && reason.stack ? reason.stack : String(reason)));
-});
+  process.on('unhandledRejection', (reason) => {
+    logStderr('未处理的 Promise 拒绝：' + (reason && reason.stack ? reason.stack : String(reason)));
+  });
+}
+
+if (require.main === module) {
+  startServer();
+}
+
+// 仅供 test/model.mjs 做模型结构校验与 Python↔JS parity 对齐；生产入口仍是 `node index.js`。
+module.exports = {
+  loadModel,
+  inferProbabilities,
+  normalizeContext,
+};

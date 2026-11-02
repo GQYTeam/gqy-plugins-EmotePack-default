@@ -1,11 +1,11 @@
 {
   "name": "gqy-plugins-emote-pack-default",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
-  "description": "GQY 表情包插件：24 张 512×512 表情与 4 个动图，支持 list/show/match 三个动作",
+  "description": "GQY 表情包插件：24 张 512×512 表情与 4 个动图，支持 list/show/match/suggest 四个动作",
   "main": "index.js",
   "scripts": {
-    "test": "node test/manifest.mjs && node test/handshake.mjs"
+    "test": "node test/manifest.mjs && node test/model.mjs && node test/handshake.mjs"
   },
   "engines": {
     "node": ">=18"

@@ -5,7 +5,7 @@ node_modules/
 tmp/
 __pycache__/
 *.pyc
-# 预留忽略项：本地临时 / 实验产物，不进仓库
+# 本地训练产物（train/ 只在本机跑，不进仓库）
 train/data/*.jsonl
 train/checkpoints/
 train/tmp/

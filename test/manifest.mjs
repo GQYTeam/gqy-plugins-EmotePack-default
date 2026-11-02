@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const PNG_MAGIC = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
-const EXPECTED_ACTIONS = ['list', 'show', 'match'];
+const EXPECTED_ACTIONS = ['list', 'show', 'match', 'suggest'];
 // 与 index.js 保持一致：macOS/Windows 系统元数据不算资产，也不算「未登记文件」。
 const IGNORED_METADATA_NAMES = new Set(['.DS_Store', '.localized', 'Thumbs.db', 'thumbs.db']);
 
@@ -97,8 +97,8 @@ check(
   'manifest.name 应为 1–64 字符'
 );
 check(manifest.name === '表情包插件', 'manifest.name 应为 表情包插件');
-check(typeof manifest.version === 'string' && /^\d{1,4}\.\d{1,4}\.\d{1,4}$/.test(manifest.version), 'manifest.version 应形如 1.0.0');
-check(manifest.version === '1.0.0', 'manifest.version 应为 1.0.0');
+check(typeof manifest.version === 'string' && /^\d{1,4}\.\d{1,4}\.\d{1,4}$/.test(manifest.version), 'manifest.version 应形如 1.1.0');
+check(manifest.version === '1.1.0', 'manifest.version 应为 1.1.0');
 check(
   typeof manifest.description === 'string' && manifest.description.trim().length > 0 && [...manifest.description].length <= 200,
   'manifest.description 应为 1–200 字符'
@@ -118,10 +118,10 @@ check(Array.isArray(manifest.provides) && manifest.provides.length === 0, 'manif
 check(Array.isArray(manifest.requires) && manifest.requires.length === 0, 'manifest.requires 应为空数组');
 
 const actions = Array.isArray(manifest.actions) ? manifest.actions : [];
-check(Array.isArray(manifest.actions) && manifest.actions.length === 3, 'manifest.actions 应恰好 3 个动作');
+check(Array.isArray(manifest.actions) && manifest.actions.length === 4, 'manifest.actions 应恰好 4 个动作');
 check(
   actions.map((a) => (a && typeof a === 'object' ? a.name : undefined)).join(',') === EXPECTED_ACTIONS.join(','),
-  'manifest.actions 必须依次为 list/show/match'
+  'manifest.actions 必须依次为 list/show/match/suggest'
 );
 const actionMap = new Map();
 for (const action of actions) {
@@ -161,6 +161,20 @@ check(
   limitSchema.type === 'integer' && limitSchema.minimum === 1 && limitSchema.maximum === 24,
   'match 的 limit 应为 1–24 的 integer'
 );
+
+const suggestSchema = (actionMap.get('suggest') || {}).schema || {};
+check(Array.isArray(suggestSchema.required) && suggestSchema.required.includes('context'), 'suggest 的 schema.required 应包含 context');
+const contextSchema = (suggestSchema.properties || {}).context || {};
+check(
+  contextSchema.type === 'string' && contextSchema.minLength === 1 && contextSchema.maxLength === 2000,
+  'suggest 的 context 应为 1–2000 字符的 string'
+);
+const suggestLimitSchema = (suggestSchema.properties || {}).limit || {};
+check(
+  suggestLimitSchema.type === 'integer' && suggestLimitSchema.minimum === 1 && suggestLimitSchema.maximum === 5 && suggestLimitSchema.default === 3,
+  'suggest 的 limit 应为 1–5、默认 3 的 integer'
+);
+
 
 // ---------- data/assets.json ----------
 
@@ -269,6 +283,67 @@ for (const [section, dir] of [
     diskNames.size === registered.get(section).size,
     dir + '/ 文件数应与清单一致（磁盘 ' + diskNames.size + '，清单 ' + registered.get(section).size + '）'
   );
+}
+
+// ---------- 语境模型 data/emote-model.json（训练产物，基本形状；深度校验见 test/model.mjs） ----------
+
+const modelFile = path.join(ROOT, 'data', 'emote-model.json');
+const emoteNames = emotes.map((item) => (item && typeof item === 'object' ? item.name : undefined));
+
+{
+  let stat = null;
+  try {
+    stat = fs.statSync(modelFile);
+  } catch {
+    check(false, 'data/emote-model.json 不存在（语境模型训练产物未就绪）');
+  }
+  if (stat) {
+    check(stat.isFile(), 'data/emote-model.json 应为普通文件');
+    check(
+      stat.size > 0 && stat.size <= 600 * 1024,
+      'data/emote-model.json 体积应在 (0, 600KB] 内（实际 ' + stat.size + ' 字节）'
+    );
+    const model = readJson(modelFile, 'data/emote-model.json');
+    if (model && typeof model === 'object' && !Array.isArray(model)) {
+      check(model.schema === 1, '语境模型 schema 应为 1');
+      check(model.task === 'context-emote-clf', '语境模型 task 应为 context-emote-clf');
+      check(Array.isArray(model.classes) && model.classes.length === 25, '语境模型 classes 应为 25 项');
+      if (Array.isArray(model.classes)) {
+        check(model.classes[24] === 'none', '语境模型 classes 末位应为 none');
+        check(
+          JSON.stringify(model.classes.slice(0, 24)) === JSON.stringify(emoteNames),
+          '语境模型 classes 前 24 项顺序应与 data/assets.json 表情清单一致'
+        );
+      }
+      const input = model.input && typeof model.input === 'object' && !Array.isArray(model.input) ? model.input : {};
+      check(
+        input.normalize === 'nfkc-lower-strip-all-whitespace' &&
+          input.max_chars === 120 &&
+          input.feature_value === 'binary' &&
+          JSON.stringify(input.ngram_order) === JSON.stringify([1, 2, 3]),
+        '语境模型 input 规格应匹配 model-format 第 4 节'
+      );
+      check(Array.isArray(input.vocab) && input.vocab.length > 0 && input.vocab.length <= 1200, '语境模型 vocab 应为 1–1200 项');
+      const net = model.model && typeof model.model === 'object' && !Array.isArray(model.model) ? model.model : {};
+      check(net.type === 'mlp-tanh-softmax', '语境模型 model.type 应为 mlp-tanh-softmax');
+      check(net.hidden === 32, '语境模型 model.hidden 应为 32（预算硬上限）');
+      check(
+        Array.isArray(net.w1) && Array.isArray(input.vocab) && net.w1.length === input.vocab.length,
+        '语境模型 w1 行数应等于 vocab 长度'
+      );
+      check(Array.isArray(net.w2) && Number.isInteger(net.hidden) && net.w2.length === net.hidden, '语境模型 w2 行数应等于 hidden');
+      check(Array.isArray(net.b2) && net.b2.length === 25, '语境模型 b2 长度应为 25');
+      check(Array.isArray(model.parity) && model.parity.length >= 8, '语境模型 parity 应 ≥ 8 条');
+      check(
+        model.metrics &&
+          typeof model.metrics === 'object' &&
+          Number.isFinite(model.metrics.val_acc1) &&
+          Number.isFinite(model.metrics.holdout_acc1) &&
+          Number.isFinite(model.metrics.none_recall),
+        '语境模型 metrics 应含 val_acc1 / holdout_acc1 / none_recall'
+      );
+    }
+  }
 }
 
 // ---------- 临时副本：系统元数据不应让运行时整体报错 ----------

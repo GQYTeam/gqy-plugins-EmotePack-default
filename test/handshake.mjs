@@ -8,6 +8,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+const MANIFEST = JSON.parse(fs.readFileSync(new URL('../manifest.json', import.meta.url), 'utf8'));
+
 const ROOT = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const PNG_MAGIC = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
 const HINT_NO_MATCH = '没有匹配的表情，可用 list 查看全部';
@@ -214,7 +216,7 @@ async function runScenario() {
   const init = await client.request('initialize', {});
   assert(init.result && init.result.ok === true, 'initialize 应返回 ok:true');
   assert(init.result.name === 'emote-pack-default', 'initialize 返回的 name 不符：' + init.result.name);
-  assert(init.result.version === '1.0.0', 'initialize 返回的 version 不符：' + init.result.version);
+  assert(init.result.version === MANIFEST.version, 'initialize 返回的 version 不符：' + init.result.version);
 
   // 2. list：24 张表情 + 4 个动图，字段齐全，bytes 与磁盘一致（现读不缓存）
   const listed = await callAction(client, 'list', {});
