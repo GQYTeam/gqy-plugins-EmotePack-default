@@ -103,8 +103,8 @@
       "key": "min_score",
       "title": "最低置信度",
       "type": "number",
-      "default": 0.5,
-      "description": "top1 表情的置信度达到该值才自动发（0–1）"
+      "default": 0.0,
+      "description": "只有 top1 置信度达到该值才自动发（0–1，默认 0 表示只要模型判断该发就发）"
     }
   ]
 }

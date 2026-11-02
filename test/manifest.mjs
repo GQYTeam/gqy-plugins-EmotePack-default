@@ -134,7 +134,7 @@ for (const s of settings) {
 const auto = settings.find((s) => s.key === 'auto_emote');
 const minScore = settings.find((s) => s.key === 'min_score');
 check(Boolean(auto) && auto.type === 'boolean' && auto.default === true, 'auto_emote 应为 boolean 且默认 true');
-check(Boolean(minScore) && minScore.type === 'number' && minScore.default === 0.5, 'min_score 应为 number 且默认 0.5');
+check(Boolean(minScore) && minScore.type === 'number' && minScore.default === 0, 'min_score 应为 number 且默认 0');
 
 
 const actions = Array.isArray(manifest.actions) ? manifest.actions : [];

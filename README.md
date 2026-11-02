@@ -4,12 +4,15 @@
 
 GQY 的「表情包」插件：24 张 512×512 静态表情 + 4 个动图包，通过插件运行时提供 `list` / `show` / `match` / `suggest` 四个动作（`suggest` 是本地训练、零依赖 JS 推理的「语境 → 表情」小模型）。
 
+当前版本 **1.2.0**：在四个动作之外，`manifest.json` 还声明了 `settings`（`auto_emote` / `min_score`），供 GQY 设置页与「回复后自动发表情」使用，详见下文「设置项（GQY 设置页）」。
+
 ## 干什么
 
 - 内置 `emotes/` 24 张静态表情（512×512 PNG），覆盖平静、开心、生气、无语、托腮等日常情绪。
 - 内置 `motions/` 4 个动图包（GIF），尺寸有 512×512 与 240×240 两种。
 - 通过 GQY 插件运行时暴露四个动作：`list`（列出全部资产）、`show`（取单个表情或动图，可选内联为 data URI）、`match`（在 24 张表情里按情绪标签确定性匹配）、`suggest`（按对话语境用本地小模型推荐表情）。已实现，stdio 换行 JSON-RPC，零依赖。
 - `suggest` 的语境模型是训练产物 `data/emote-model.json`（离线 numpy 训练、插件内零依赖 JS 推理），指标、体积、局限见下文「语境模型」。
+- manifest 声明 `settings`（`auto_emote` / `min_score`）：GQY 可在每次回复结束后，按语境模型结果与设置自动追加一张表情（见「设置项」）。
 - 资产索引的唯一来源是 `data/assets.json`，插件启动时读取；本文表里的数字与它一致。
 
 ## 资产清单
@@ -153,6 +156,20 @@ holdout 的 top-5 命中率 **acc5 = 0.76071**（`metrics.holdout_acc5`）。
 {"decision":"none","none_score":0.35938,"predictions":[],"hint":"该语境不适合发表情"}
 ```
 
+## 设置项（GQY 设置页）
+
+本插件在 `manifest.json` 的 `settings` 里声明两项设置，GQY WebUI 的插件页会据此渲染设置表单；改设置**不需要改插件目录**，在线安装的只读版本也能配置：
+
+| key | 类型 | 默认 | 作用 |
+| --- | --- | --- | --- |
+| `auto_emote` | boolean | `true` | 回复后自动发表情开关。关闭后 GQY 在回复结束时**不再**自动发；`suggest` 动作仍可手动调用。 |
+| `min_score` | number（0–1） | `0` | 自动发的最低置信度：只有模型 `decision="emote"` 且 top1 表情分数 **≥ 该值**时才自动发；0 表示只要模型判断该发就发。 |
+
+- **存储**：`$GQY_HOME/plugin-settings/emote-pack-default.json`（0600，GQY 管理）。设置值**永不写进插件目录**，所以安装版只读也能改设置；卸载 / 删除插件会一并清理设置。
+- **读写**：`GET /api/plugins/emote-pack-default/settings` 返回 `schema / values / effective / source / read_only`；`PUT` 同路径保存，按 schema 严格校验（类型不符 / 未知键 / 选项越界拒绝，`null` 恢复默认）；GQY WebUI 插件页提供同一份设置表单。
+- **谁消费设置**：`auto_emote` / `min_score` 由 GQY 核心读取与执行；插件进程不消费设置，`suggest` 只负责返回建议。
+- **自动发表情的行为**：每次 `/api/chat` 回复结束、插件就绪且 `auto_emote=true`、模型 `decision="emote"`、top1 分数 ≥ `min_score` 时，GQY 会把 `emote` 事件追加到 SSE 流，前端据此渲染一张表情图；插件卸载或关闭 `auto_emote` 即停止。
+
 ## 安装方式
 
 GQY 按 `$GQY_HOME/plugins/<id>/manifest.json` 发现插件，约定见 [`GQY/docs/designs/04-插件运行时.md`](../GQY/docs/designs/04-插件运行时.md) 的 P3（manifest 字段）与 P9（安装 / 扫描）。`$GQY_HOME` 默认是 `~/.gqy`，服务默认监听 `127.0.0.1:5173`。
@@ -173,6 +190,8 @@ $GQY_HOME/plugins/emote-pack-default/
 ```
 
 - 自检（装之前也能跑）：`node --check index.js && npm test`，走 manifest/资产校验 + 语境模型校验（结构 + Python↔JS parity + suggest 动作级）+ initialize → list → show → match → suggest → shutdown 全链路。零依赖，只需 Node ≥18。
+- GQY WebUI：插件页 → 加载 / 卸载、设置（`auto_emote` / `min_score`）、删除；设置与加载也可直接走 API（见下）。
+- 设置 API：`GET|PUT /api/plugins/emote-pack-default/settings`（`GET` 返回 schema/values/effective；`PUT` 保存，`null` 恢复默认）。
 - 加载：`curl -X POST http://127.0.0.1:5173/api/plugins/emote-pack-default/load`
 - 调试调用：`curl -X POST http://127.0.0.1:5173/api/plugins/emote-pack-default/call -H 'Content-Type: application/json' -d '{"action":"match","arguments":{"query":"累"}}'`
 - 卸载：`curl -X POST http://127.0.0.1:5173/api/plugins/emote-pack-default/unload`（幂等）。
@@ -195,7 +214,7 @@ $GQY_HOME/plugins/emote-pack-default/
 
 - **不写文件**：只读 `emotes/`、`motions/`、`data/assets.json`、`data/emote-model.json`；不上传、不生成、不改名、不删资产。
 - **不联网**：`match` 全在本地按标签打分，`suggest` 全在本机小模型推理，不调外部服务、不下载模型。
-- **不自动发图**：`suggest` 只回建议（`decision` + `none_score` + top-k），发不发、发哪张由角色或调用方决定。
+- **不自己发图**：插件只提供动作与设置声明；`suggest` 只回建议（`decision` + `none_score` + top-k）。「回复后自动发表情」由 GQY 核心按 `auto_emote` / `min_score` 决定并走 SSE `emote` 事件，插件本身不推送图片。
 - **不转码**：GIF 与 PNG 都是成品；运行时不做格式转换、不缩放、不压缩。
 - **不导出微信包**：不做表情包导出 / 打包；「微信 240」只是 `motions/` 里已有的一个 240×240 GIF。
 
