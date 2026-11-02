@@ -98,7 +98,7 @@ check(
 );
 check(manifest.name === '表情包插件', 'manifest.name 应为 表情包插件');
 check(typeof manifest.version === 'string' && /^\d{1,4}\.\d{1,4}\.\d{1,4}$/.test(manifest.version), 'manifest.version 应形如 1.1.0');
-check(manifest.version === '1.1.0', 'manifest.version 应为 1.1.0');
+check(manifest.version === '1.2.0', 'manifest.version 应为 1.2.0');
 check(
   typeof manifest.description === 'string' && manifest.description.trim().length > 0 && [...manifest.description].length <= 200,
   'manifest.description 应为 1–200 字符'
@@ -116,6 +116,26 @@ check(['concurrent', 'single-channel', 'exclusive'].includes(manifest.concurrenc
 check(manifest.concurrency === 'concurrent', 'manifest.concurrency 应为 concurrent');
 check(Array.isArray(manifest.provides) && manifest.provides.length === 0, 'manifest.provides 应为空数组');
 check(Array.isArray(manifest.requires) && manifest.requires.length === 0, 'manifest.requires 应为空数组');
+
+// settings schema（PL3）：auto_emote / min_score 控制「回复后自动发表情」
+const settings = Array.isArray(manifest.settings) ? manifest.settings : [];
+check(settings.length > 0, 'manifest.settings 应声明设置项');
+const settingKeys = new Set();
+for (const s of settings) {
+  check(s && typeof s === 'object' && !Array.isArray(s), 'settings 每项必须是对象');
+  check(typeof s.key === 'string' && s.key.length > 0, 'settings.key 必须非空');
+  check(!settingKeys.has(s.key), 'settings.key 重复：' + String(s.key));
+  settingKeys.add(s.key);
+  check(['string', 'number', 'boolean', 'select'].includes(s.type), 'settings.type 非法：' + String(s.type));
+  check(typeof s.title === 'string' && s.title.length > 0, 'settings.title 必填');
+  check(s.default !== undefined, 'settings.default 必填：' + String(s.key));
+  check(s.type !== 'select' || (Array.isArray(s.options) && s.options.length > 0), 'select 必须给 options');
+}
+const auto = settings.find((s) => s.key === 'auto_emote');
+const minScore = settings.find((s) => s.key === 'min_score');
+check(Boolean(auto) && auto.type === 'boolean' && auto.default === true, 'auto_emote 应为 boolean 且默认 true');
+check(Boolean(minScore) && minScore.type === 'number' && minScore.default === 0.5, 'min_score 应为 number 且默认 0.5');
+
 
 const actions = Array.isArray(manifest.actions) ? manifest.actions : [];
 check(Array.isArray(manifest.actions) && manifest.actions.length === 4, 'manifest.actions 应恰好 4 个动作');

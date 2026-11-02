@@ -12,7 +12,7 @@ const path = require('path');
 
 const ROOT = __dirname;
 const PLUGIN_ID = 'emote-pack-default';
-const VERSION = '1.1.0';
+const VERSION = '1.2.0';
 const ASSETS_FILE = path.join(ROOT, 'data', 'assets.json');
 const MODEL_FILE = path.join(ROOT, 'data', 'emote-model.json');
 const ACTIONS = ['list', 'show', 'match', 'suggest'];
