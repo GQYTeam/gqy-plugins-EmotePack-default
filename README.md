@@ -1,5 +1,7 @@
 # gqy-plugins-EmotePack-default
 
+[![CI](https://github.com/GQYTeam/gqy-plugins-EmotePack-default/actions/workflows/ci.yml/badge.svg)](https://github.com/GQYTeam/gqy-plugins-EmotePack-default/actions/workflows/ci.yml)
+
 GQY 的「表情包」插件：24 张 512×512 静态表情 + 4 个动图包，通过插件运行时提供 `list` / `show` / `match` 三个动作。
 
 ## 干什么
@@ -112,3 +114,22 @@ $GQY_HOME/plugins/emote-pack-default/
 - **不联网**：`match` 全在本地按标签打分，不调模型、不调外部接口。
 - **不转码**：GIF 与 PNG 都是成品；运行时不做格式转换、不缩放、不压缩。
 - **不导出微信包**：不做表情包导出 / 打包；「微信 240」只是 `motions/` 里已有的一个 240×240 GIF。
+
+## 许可与署名
+
+本仓库按 **PolyForm Noncommercial License 1.0.0** 授权，全文见 [`LICENSE`](LICENSE)。
+
+- **禁止商用。** 生产、部署、售卖、SaaS、内置于商业产品等任何商业目的的使用，都不在授权范围内。
+- **必须署名。** fork、二次开发、摘取代码 / 文档 / 设计，都必须标注来源与原作者。
+- **保留通知。** 分发任何副本（含修改后的）必须带上 `LICENSE`、[`NOTICE`](NOTICE) 与 `LICENSE` 顶部的 `Required Notice` 原文。
+
+衍生项目的 `README.md`（或同等声明文件）里原样写清这四项：
+
+```text
+来源项目：GQYTeam/gqy-plugins-EmotePack-default
+项目地址：https://github.com/GQYTeam/gqy-plugins-EmotePack-default
+原作者：GQYTeam
+许可证：PolyForm Noncommercial License 1.0.0
+```
+
+完整条款与示例见 [`NOTICE`](NOTICE)；第三方代码 / 素材 / 参考项目的许可与出处记在 `docs/third-party/`，各自许可优先于本仓库许可。
